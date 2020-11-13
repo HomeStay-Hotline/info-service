@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
   database: 'airbnbs',
 });
 
-const getAllInfo = function (id, callback) {
+const getAllInfo = (id, callback) => {
   const sql = 'SELECT * FROM listings, lodge_type, house_rules WHERE listings.lodgetype_id = lodge_type.id AND listings.houserules_id = house_rules.id AND listings.id = ?';
   const field = [id];
   connection.query(sql, field, (err, results) => {
