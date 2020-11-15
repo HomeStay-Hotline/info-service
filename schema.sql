@@ -33,6 +33,7 @@ CREATE TABLE lodge_type (
 CREATE TABLE listings (
     id int NOT NULL AUTO_INCREMENT,
     hostname varchar(255) NOT NULL,
+    hostimg varchar(255) NOT NULL,
     lodgename varchar(255) NOT NULL,
     lodgetype_id int NOT NULL,
     houserules_id int NOT NULL, 

@@ -79,9 +79,10 @@ const seedData = () => {
       }
     });
 
-    const sql3 = 'INSERT INTO listings (hostname, lodgename, lodgetype_id, houserules_id, superhost, enhanced_clean, description, des_space, guest_access, other_things) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const sql3 = 'INSERT INTO listings (hostname, hostimg, lodgename, lodgetype_id, houserules_id, superhost, enhanced_clean, description, des_space, guest_access, other_things) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     const values3 = [
       `${faker.name.firstName()} ${faker.name.lastName()}`,
+      'https://loremflickr.com/320/240/face,human/all',
       faker.commerce.productName(),
       i,
       i,
