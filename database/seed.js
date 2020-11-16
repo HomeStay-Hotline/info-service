@@ -9,6 +9,41 @@ const generateRandomBoolean = () => {
   return 'true';
 };
 
+const generateParagraphLength = () => {
+  const result = Math.floor(Math.random() * Math.floor(5));
+  if (result === 0) {
+    return faker.lorem.paragraphs();
+  }
+  if (result === 1) {
+    return faker.lorem.paragraph();
+  }
+  if (result === 2) {
+    return faker.lorem.sentences();
+  }
+  if (result === 3) {
+    return faker.lorem.sentence();
+  }
+  if (result === 4) {
+    return '';
+  }
+};
+
+const lodgeType = () => {
+  const options = [
+    'House',
+    'Yurt',
+    'Mansion',
+    'Apartment',
+    'Cabin',
+    'Bungalow',
+    'Cottage',
+    'Treehouse',
+    'Condominium',
+  ];
+  const choice = Math.floor(Math.random() * Math.floor(options.length));
+  return options[choice];
+};
+
 const seedData = () => {
   for (let i = 1; i <= 100; i++) {
     const sql = 'INSERT INTO house_rules (check_in, check_out, self_checkIn, kid_friendly, infant_friendly, pets, smoking, parties_events, additional_rules) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)';
@@ -32,7 +67,7 @@ const seedData = () => {
     const sql2 = 'INSERT INTO lodge_type (entire_lodge, type, max_guests, bedroom, beds, bath) VALUES ( ?, ?, ?, ?, ?, ?)';
     const values2 = [
       generateRandomBoolean(),
-      faker.random.word(),
+      lodgeType(),
       faker.random.number({ min: 1, max: 10 }),
       faker.random.number({ min: 0, max: 10 }),
       faker.random.number({ min: 1, max: 10 }),
@@ -44,18 +79,19 @@ const seedData = () => {
       }
     });
 
-    const sql3 = 'INSERT INTO listings (hostname, lodgename, lodgetype_id, houserules_id, superhost, enhanced_clean, description, des_space, guest_access, other_things) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const sql3 = 'INSERT INTO listings (hostname, hostimg, lodgename, lodgetype_id, houserules_id, superhost, enhanced_clean, description, des_space, guest_access, other_things) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     const values3 = [
       `${faker.name.firstName()} ${faker.name.lastName()}`,
+      'https://loremflickr.com/320/240/face,human/all',
       faker.commerce.productName(),
       i,
       i,
       generateRandomBoolean(),
       generateRandomBoolean(),
-      faker.lorem.sentences(),
-      faker.lorem.sentences(),
-      faker.lorem.sentences(),
-      faker.lorem.sentences(),
+      generateParagraphLength(),
+      generateParagraphLength(),
+      generateParagraphLength(),
+      generateParagraphLength(),
     ];
     db.connection.query(sql3, values3, (err) => {
       if (err) {
