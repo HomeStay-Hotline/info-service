@@ -3,10 +3,11 @@ import BedInfos from './BedInfos';
 import Description from './Description';
 import LodgeHeader from './LodgeHeader';
 import QuickInfo from './QuickInfo';
+// import styles from '../../public/style/App_style.css';
 
 const axios = require('axios');
 
-const App = (props) => {
+const App = () => {
   const [data, setData] = useState([]);
 
   const randomId = () => {
@@ -17,7 +18,6 @@ const App = (props) => {
   const loadData = (id) => {
     axios.get(`/api/homes/${id}/info`)
       .then((response) => {
-        console.log(response.data[0]);
         setData(response.data[0]);
       })
       .catch((error) => {
@@ -35,13 +35,12 @@ const App = (props) => {
 
   return (
     <div>
-      <text>hellooooooo</text>
-      <LodgeHeader data={data}/>
-      <text>--------------</text>
+      <LodgeHeader data={data} />
+      <hr />
       <QuickInfo />
-      <text>--------------</text>
+      <hr />
       <Description />
-      <text>--------------</text>
+      <hr />
       <BedInfos />
     </div>
   );

@@ -23,9 +23,7 @@ const generateParagraphLength = () => {
   if (result === 3) {
     return faker.lorem.sentence();
   }
-  if (result === 4) {
-    return '';
-  }
+  return '';
 };
 
 const lodgeType = () => {
