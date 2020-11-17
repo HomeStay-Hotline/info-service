@@ -44,7 +44,7 @@ const App = () => {
       <hr />
       <QuickInfo data={data} />
       <hr />
-      <Description />
+      <Description data={data}/>
       <hr />
       <BedInfos />
     </div>

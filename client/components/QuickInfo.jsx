@@ -22,7 +22,6 @@ const QuickInfo = (props) => {
       hostname,
     },
   } = props;
-  const [info, updateInfo] = useState([]);
 
   return (
     <div className={styles.main}>
@@ -93,7 +92,7 @@ QuickInfo.propTypes = {
     superhost: PropTypes.bool.isRequired,
     entireLodge: PropTypes.bool.isRequired,
     type: PropTypes.string.isRequired,
-    hostname: PropTypes.string.isRequired
+    hostname: PropTypes.string.isRequired,
   }).isRequired,
 };
 
