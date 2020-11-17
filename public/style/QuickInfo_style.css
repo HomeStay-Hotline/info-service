@@ -2,3 +2,10 @@
 div {
     font-family: 'Montserrat', sans-serif;
 }
+
+.main {
+    width: 597px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+

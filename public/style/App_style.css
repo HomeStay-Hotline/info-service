@@ -1,4 +1,8 @@
 
 div {
-    color: red;
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    border-top: #DEDEDE;
 }

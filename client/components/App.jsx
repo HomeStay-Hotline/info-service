@@ -3,7 +3,7 @@ import BedInfos from './BedInfos';
 import Description from './Description';
 import LodgeHeader from './LodgeHeader';
 import QuickInfo from './QuickInfo';
-// import styles from '../../public/style/App_style.css';
+import styles from '../../public/style/App_style.css';
 
 const axios = require('axios');
 
@@ -37,7 +37,7 @@ const App = () => {
     <div>
       <LodgeHeader data={data} />
       <hr />
-      <QuickInfo />
+      <QuickInfo data={data} />
       <hr />
       <Description />
       <hr />
