@@ -9,6 +9,7 @@ const axios = require('axios');
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [info, updateInfo] = useState([]);
 
   const randomId = () => {
     const randomNum = Math.floor(Math.random() * Math.floor(100)) + 1;
@@ -32,6 +33,10 @@ const App = () => {
   if (!data) {
     return 'load....ing';
   }
+
+
+
+  console.log(data, info, 'from app');
 
   return (
     <div>

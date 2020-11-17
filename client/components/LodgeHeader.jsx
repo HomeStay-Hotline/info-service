@@ -11,15 +11,15 @@ const LodgeHeader = (props) => {
   const [lodgetype, changeType] = useState(true);
 
   useEffect(() => {
-    if (entireLodge === 'false') {
+    if (entireLodge) {
       changeType(false);
     }
   });
 
   return (
-    <div className="border">
-      <div className="divider">
-        <div className="header">
+    <div className={styles.border}>
+      <div className={styles.divider}>
+        <div className={styles.header}>
           {lodgetype ? 'Entire ' : 'Private Room in '}
           {type}
           {' '}
@@ -27,7 +27,7 @@ const LodgeHeader = (props) => {
           {' '}
           {hostname}
         </div>
-        <div className="subheader">
+        <div className={styles.subheader}>
           <span>
             {maxGuests}
             {' '}
@@ -53,8 +53,8 @@ const LodgeHeader = (props) => {
           </span>
         </div>
       </div>
-      <div className="hostimage">
-        <img className="imagesize" src={hostimg} alt="host" />
+      <div className={styles.hostimage}>
+        <img className={styles.imagesize} src={hostimg} alt="host" />
       </div>
     </div>
   );
@@ -62,7 +62,7 @@ const LodgeHeader = (props) => {
 
 LodgeHeader.propTypes = {
   data: PropTypes.shape({
-    entireLodge: PropTypes.string.isRequired,
+    entireLodge: PropTypes.number.isRequired,
     hostname: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     maxGuests: PropTypes.number.isRequired,
