@@ -26,7 +26,6 @@ const QuickInfo = (props) => {
   const [show, setShow] = useState(false);
 
   const closeModal = (state) => {
-    console.log(state, 'closemodal');
     setShow(state);
   };
 
@@ -67,7 +66,7 @@ const QuickInfo = (props) => {
                     <div className={styles.comment}>
                       This host committed to Airbnb's 5-step enhanced cleaning process.
                       <button
-                        type="button" 
+                        type="button"
                         value="open"
                         onClick={
                           () => {
@@ -111,7 +110,10 @@ const QuickInfo = (props) => {
                       {' '}
                       is a Superhost
                     </div>
-                    <div className={styles.comment}>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</div>
+                    <div className={styles.comment}>
+                      Superhosts are experienced, highly rated hosts who are
+                      committed to providing great stays for guests.
+                    </div>
                   </div>
                 </div>
               )
@@ -125,7 +127,10 @@ const QuickInfo = (props) => {
                   <FontAwesomeIcon icon="book-open" />
                   <div className={styles.description}>
                     <div className={styles.info}>House rules</div>
-                    <div className={styles.comment}>The host doesn’t allow parties or smoking. Get Details(link)</div>
+                    <div className={styles.comment}>
+                      The host doesn’t allow
+                      parties or smoking. Get Details(link)
+                    </div>
                   </div>
                 </div>
               )

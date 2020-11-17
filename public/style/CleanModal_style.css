@@ -3,8 +3,8 @@ div {
     font-family: 'Montserrat', sans-serif;
 }
 
-.modalBG {
-    display: none; /* Hidden by default */
+.modalmain {
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -21,25 +21,29 @@ div {
 }
 
 .modalContent {
-  position: relative;
+  position: absolute;
   bottom: 0;
   background-color: #fefefe;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
   -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.6s;
   animation-name: slideIn;
-  animation-duration: 0.4s
+  animation-duration: 0.6s
 
 }
 
 @-webkit-keyframes slideIn {
     from {bottom: -300px; opacity: 0} 
-    to {bottom: 0; opacity: 1}
+    to {bottom: 0px; opacity: 1}
   }
   
 @keyframes slideIn {
     from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
+    to {bottom: 0px; opacity: 1}
 }
   
 @-webkit-keyframes fadeIn {
@@ -51,3 +55,15 @@ div {
     from {opacity: 0} 
     to {opacity: 1}
   }
+
+  .button {
+    background-color: white; 
+    border: none; 
+    border-radius: 50%;
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+  background-color: silver;
+}
+

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from '../../public/style/CleanModal_style.css';
 
 const CleanModal = (props) => {
   const {
@@ -8,17 +9,16 @@ const CleanModal = (props) => {
   } = props;
 
   const handleClick = () => {
-    console.log('button was clicked');
     closeModal(false);
   };
 
   return (
-    <div className="modalBG">
-      <div className="modalContent">
+    <div id="modalBG" className={styles.modalmain}>
+      <div className={styles.modalContent}>
         <div>
           <button
-            type="button" 
-            value="exit"
+            type="button"
+            className="button"
             onClick={handleClick}
           >
             <FontAwesomeIcon icon="times" />
@@ -28,8 +28,8 @@ const CleanModal = (props) => {
           <FontAwesomeIcon icon="star" size="4x" />
           <span>Enhanced Clean</span>
           <p>
-            committed to Airbnb’s 5-step enhanced cleaning process—a set of standards developed in partnership with experts,
-            for the times of COVID-19 and beyond.
+            committed to Airbnb’s 5-step enhanced cleaning process—a set of standards develope
+            d in partnership with experts, for the times of COVID-19 and beyond.
           </p>
           <p>Here’s what committed to doing before every stay:</p>
         </div>
@@ -63,7 +63,8 @@ const CleanModal = (props) => {
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
                 <div>
                   <div>Use approved products</div>
-                  Use cleaners approved by health experts, like disinfectants with 70% alcohol or higher
+                  Use cleaners approved by health experts, like disinfectants with 70% alcohol
+                  or higher
                 </div>
               </td>
             </tr>
