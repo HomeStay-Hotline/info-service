@@ -2,7 +2,7 @@
   "name": "info-service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "test": "jest  --coverage",
     "build": "webpack --config webpack.config.js --watch",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/a-heo/info-service#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "express": "^4.17.1",
