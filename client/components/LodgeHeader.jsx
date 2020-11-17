@@ -1,27 +1,76 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import styles from '../../public/style/lodgeheader_style.css';
 
 const LodgeHeader = (props) => {
+  const {
+    data: {
+      entireLodge, hostname, type, maxGuests, bedroom, beds, bath, hostimg,
+    },
+  } = props;
+  const [lodgetype, changeType] = useState(true);
 
-  console.log(props.data, 'from lodgeheader');
-return (
-  <div>
-    <div className='LodgeType and Host'>
-    {props.data.type} by {props.data.hostname}
+  useEffect(() => {
+    if (entireLodge === 'false') {
+      changeType(false);
+    }
+  });
+
+  return (
+    <div className="border">
+      <div className="divider">
+        <div className="header">
+          {lodgetype ? 'Entire ' : 'Private Room in '}
+          {type}
+          {' '}
+          by
+          {' '}
+          {hostname}
+        </div>
+        <div className="subheader">
+          <span>
+            {maxGuests}
+            {' '}
+            guests
+          </span>
+          <span> · </span>
+          <span>
+            {bedroom}
+            {' '}
+            bedrooms
+          </span>
+          <span> · </span>
+          <span>
+            {beds}
+            {' '}
+            beds
+          </span>
+          <span> · </span>
+          <span>
+            {bath}
+            {' '}
+            bath
+          </span>
+        </div>
+      </div>
+      <div className="hostimage">
+        <img className="imagesize" src={hostimg} alt="host" />
+      </div>
     </div>
-    <div>
-      <span>{props.data.max_guests} guests</span>
-      <span> · </span>
-      <span>{props.data.bedroom} bedrooms</span>
-      <span> · </span>
-      <span>{props.data.beds} beds</span>
-      <span> · </span>
-      <span>{props.data.bath} bath</span>
-    </div>
-    <div className='hostimage'>
-            <img src=${props.data.hostimg}></img>
-    </div>
-  </div>
-)
+  );
+};
+
+LodgeHeader.propTypes = {
+  data: PropTypes.shape({
+    entireLodge: PropTypes.string.isRequired,
+    hostname: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    maxGuests: PropTypes.number.isRequired,
+    bedroom: PropTypes.number.isRequired,
+    beds: PropTypes.number.isRequired,
+    bath: PropTypes.number.isRequired,
+    hostimg: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default LodgeHeader;

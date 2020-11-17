@@ -4,9 +4,9 @@ const db = require('./index.js');
 const generateRandomBoolean = () => {
   const result = Math.floor(Math.random() * Math.floor(2));
   if (result === 1) {
-    return 'false';
+    return false;
   }
-  return 'true';
+  return true;
 };
 
 const generateParagraphLength = () => {
@@ -23,9 +23,7 @@ const generateParagraphLength = () => {
   if (result === 3) {
     return faker.lorem.sentence();
   }
-  if (result === 4) {
-    return '';
-  }
+  return '';
 };
 
 const lodgeType = () => {
@@ -46,7 +44,7 @@ const lodgeType = () => {
 
 const seedData = () => {
   for (let i = 1; i <= 100; i++) {
-    const sql = 'INSERT INTO house_rules (check_in, check_out, self_checkIn, kid_friendly, infant_friendly, pets, smoking, parties_events, additional_rules) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const sql = 'INSERT INTO house_rules (checkIn, checkOut, selfCheckIn, kidFriendly, infantFriendly, pets, smoking, partiesEvents, additionalRules) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     const values = [
       faker.random.number(1),
       faker.random.number(1),
@@ -64,7 +62,7 @@ const seedData = () => {
       }
     });
 
-    const sql2 = 'INSERT INTO lodge_type (entire_lodge, type, max_guests, bedroom, beds, bath) VALUES ( ?, ?, ?, ?, ?, ?)';
+    const sql2 = 'INSERT INTO lodge_type (entireLodge, type, maxGuests, bedroom, beds, bath) VALUES ( ?, ?, ?, ?, ?, ?)';
     const values2 = [
       generateRandomBoolean(),
       lodgeType(),
@@ -79,7 +77,7 @@ const seedData = () => {
       }
     });
 
-    const sql3 = 'INSERT INTO listings (hostname, hostimg, lodgename, lodgetype_id, houserules_id, superhost, enhanced_clean, description, des_space, guest_access, other_things) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const sql3 = 'INSERT INTO listings (hostname, hostimg, lodgename, lodgetype_id, houserules_id, superhost, enhancedClean, description, desSpace, guestAccess, otherThings) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
     const values3 = [
       `${faker.name.firstName()} ${faker.name.lastName()}`,
       'https://loremflickr.com/320/240/face,human/all',
