@@ -11,16 +11,51 @@ const Description = (props) => {
       otherThings,
     },
   } = props;
+
   return (
-    <div className="body">
+    <div className={styles.body}>
       <div>
-        <span className={styles.details}>{description}</span>
-        <span className={styles.header}>The space</span>
-        <span className={styles.details}>{desSpace}</span>
-        <span className={styles.header}>Guest Access</span>
-        <span className={styles.details}>{guestAccess}</span>
-        <span className={styles.header}>Other Things To Note</span>
-        <span className={styles.details}>{otherThings}</span>
+        {
+         description
+           ? <span className={styles.details}>{description}</span>
+           : null
+        }
+        {
+        desSpace
+          ? (
+            <div>
+              <p />
+              <span className={styles.header}>The space</span>
+              <br />
+              <span className={styles.details}>{desSpace}</span>
+            </div>
+          )
+          : null
+        }
+        {
+         guestAccess
+           ? (
+             <div>
+               <p />
+               <span className={styles.header}>Guest Access</span>
+               <br />
+               <span className={styles.details}>{guestAccess}</span>
+             </div>
+           )
+           : null
+        }
+        {
+          otherThings
+            ? (
+              <div>
+                <p />
+                <span className={styles.header}>Other Things To Note</span>
+                <p />
+                <span className={styles.details}>{otherThings}</span>
+              </div>
+            )
+            : null
+        }
         <button type="button" className="expand">read more</button>
       </div>
       <div className="login"><a href="www.airbnb.com">Contact Host</a></div>

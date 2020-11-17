@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+
+//imported icons 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHome, faStar, faDoorClosed, faMedal, faTimes, faClipboardCheck, faBookOpen } from '@fortawesome/free-solid-svg-icons';
+
 import BedInfos from './BedInfos';
 import Description from './Description';
 import LodgeHeader from './LodgeHeader';
@@ -34,9 +39,7 @@ const App = () => {
     return 'load....ing';
   }
 
-
-
-  console.log(data, info, 'from app');
+  library.add(faHome, faStar, faTimes, faDoorClosed, faClipboardCheck, faMedal, faBookOpen);
 
   return (
     <div>

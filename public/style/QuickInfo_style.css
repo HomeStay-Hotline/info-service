@@ -9,3 +9,21 @@ div {
     padding-bottom: 32px;
 }
 
+.section {
+    display: flex;
+    padding-bottom: 20px; 
+}
+
+.description {
+    width: 90%;
+    flex-grow: 1;
+    padding-left: 20px;  
+}
+.info {
+    font-size: 12px;
+    font-weight: bold; 
+}
+
+.comment {
+    font-size: 10px; 
+}
