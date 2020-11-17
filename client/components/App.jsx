@@ -6,7 +6,7 @@ import QuickInfo from './QuickInfo';
 
 const axios = require('axios');
 
-const App = () => {
+const App = (props) => {
   const [data, setData] = useState([]);
 
   const randomId = () => {
@@ -17,8 +17,8 @@ const App = () => {
   const loadData = (id) => {
     axios.get(`/api/homes/${id}/info`)
       .then((response) => {
-        console.log(response.data);
-        setData(response.data);
+        console.log(response.data[0]);
+        setData(response.data[0]);
       })
       .catch((error) => {
         console.log(error, 'this is an error get');
@@ -26,14 +26,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log('use effect worked');
     loadData(randomId());
   }, []);
+
+  if (!data) {
+    return 'load....ing';
+  }
 
   return (
     <div>
       <text>hellooooooo</text>
-      <LodgeHeader />
+      <LodgeHeader data={data}/>
       <text>--------------</text>
       <QuickInfo />
       <text>--------------</text>

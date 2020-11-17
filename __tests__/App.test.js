@@ -1,7 +1,5 @@
-import { shallow, mount, render } from 'enzyme';
-
+import { shallow } from 'enzyme';
 import React from 'react';
-
 import App from '../client/components/App';
 import BedInfos from '../client/components/BedInfos';
 import Description from '../client/components/Description';
@@ -14,30 +12,20 @@ describe('<App />', () => {
     wrapper = shallow(<App />);
   });
 
-  test('should call componentDidMount()', () => {
-    const fakeMounting = jest.spyOn(App.prototype, 'componentDidMount');
-    expect(fakeMounting).toHaveBeenCalledTimes(1);
+  test('should have child component <LodgeHeader />', () => {
+    expect(wrapper.containsMatchingElement(<LodgeHeader />)).toEqual(true);
   });
 
-  test('should call getListingInfo()', () => {
-    const fakeCallListing = jest.spyOn(App.prototype, 'getListingInfo()');
-    expect(fakeCallListing).toHaveBeenCalledTimes(1);
+  test('should have child component <Description />', () => {
+    expect(wrapper.containsMatchingElement(<Description />)).toEqual(true);
   });
 
-  test('should have child components', () => {
-    expect(wrapper.containsMatchingElement(<LodgeHeader />).to.equal(true));
+  test('should have child components <QuickInfo />', () => {
+    expect(wrapper.containsMatchingElement(<QuickInfo />)).toEqual(true);
   });
 
-  test('should have child components', () => {
-    expect(wrapper.containsMatchingElement(<Description />).to.equal(true));
-  });
-
-  test('should have child components', () => {
-    expect(wrapper.containsMatchingElement(<QuickInfo />).to.equal(true));
-  });
-
-  test('should have child components', () => {
-    expect(wrapper.containsMatchingElement(<BedInfos />).to.equal(true));
+  test('should have child component <BedInfos />', () => {
+    expect(wrapper.containsMatchingElement(<BedInfos />)).toEqual(true);
   });
 
   test('render the initial value of state in a div', () => {});
