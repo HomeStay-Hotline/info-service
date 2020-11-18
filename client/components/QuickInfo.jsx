@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../public/style/QuickInfo_style.css';
 import CleanModal from './CleanModal';
+import GetDetailsModal from './GetDetailsModal';
 
 const QuickInfo = (props) => {
   const {
@@ -23,13 +24,13 @@ const QuickInfo = (props) => {
       hostname,
     },
   } = props;
-  const [show, setShow] = useState(false);
+  const [showClean, setShowClean] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   const closeModal = (state) => {
-    setShow(state);
+    setShowClean(state);
   };
 
-  console.log(show, 'show');
   return (
     <div className={styles.main}>
       <div>
@@ -67,16 +68,16 @@ const QuickInfo = (props) => {
                       This host committed to Airbnb's 5-step enhanced cleaning process.
                       <button
                         type="button"
-                        value="open"
+                        className={styles.button}
                         onClick={
                           () => {
-                            setShow(true);
+                            setShowClean(true);
                           }
                         }
                       >
                         Learn more
                       </button>
-                      {show ? <CleanModal closeModal={closeModal} />
+                      {showClean ? <CleanModal closeModal={closeModal} />
                         : null}
                     </div>
                   </div>
@@ -129,7 +130,33 @@ const QuickInfo = (props) => {
                     <div className={styles.info}>House rules</div>
                     <div className={styles.comment}>
                       The host doesn’t allow
-                      parties or smoking. Get Details(link)
+                      parties or smoking.
+                      <button
+                        type="button"
+                        className={styles.button}
+                        onClick={
+                          () => {
+                            setShowDetails(true);
+                          }
+                        }
+                      >
+                        Get Details
+                      </button>
+                      {showDetails
+                        ? (
+                          <GetDetailsModal
+                            checkIn={checkIn}
+                            checkOut={checkOut}
+                            selfCheckIn={selfCheckIn}
+                            kidFriendly={kidFriendly}
+                            infantFriendly={infantFriendly}
+                            pets={pets}
+                            smoking={smoking}
+                            partiesEvents={partiesEvents}
+                            additionalRules={additionalRules}
+                          />
+                        )
+                        : null}
                     </div>
                   </div>
                 </div>
@@ -146,7 +173,7 @@ QuickInfo.propTypes = {
     checkIn: PropTypes.number.isRequired,
     checkOut: PropTypes.number.isRequired,
     selfCheckIn: PropTypes.bool.isRequired,
-    kidFriend: PropTypes.bool.isRequired,
+    kidFriendly: PropTypes.bool.isRequired,
     infantFriendly: PropTypes.bool.isRequired,
     pets: PropTypes.bool.isRequired,
     smoking: PropTypes.bool.isRequired,

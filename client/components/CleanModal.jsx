@@ -18,7 +18,7 @@ const CleanModal = (props) => {
         <div>
           <button
             type="button"
-            className="button"
+            className={styles.button}
             onClick={handleClick}
           >
             <FontAwesomeIcon icon="times" />
@@ -26,7 +26,7 @@ const CleanModal = (props) => {
         </div>
         <div>
           <FontAwesomeIcon icon="star" size="4x" />
-          <span>Enhanced Clean</span>
+          <span className={styles.heading}>Enhanced Clean</span>
           <p>
             committed to Airbnb’s 5-step enhanced cleaning process—a set of standards develope
             d in partnership with experts, for the times of COVID-19 and beyond.

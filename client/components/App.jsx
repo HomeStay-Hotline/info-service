@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from 'react';
 
-//imported icons 
+// imported icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faStar, faDoorClosed, faMedal, faTimes, faClipboardCheck, faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faStar,
+  faDoorClosed,
+  faMedal,
+  faTimes,
+  faClipboardCheck,
+  faClock,
+  faKey,
+  faSmokingBan,
+  faSmoking,
+  faChild,
+  faBaby,
+  faPaw,
+  faUsersSlash,
+  faBell,
+  faBookOpen,
+} from '@fortawesome/free-solid-svg-icons';
 
 import BedInfos from './BedInfos';
 import Description from './Description';
@@ -39,7 +56,24 @@ const App = () => {
     return 'load....ing';
   }
 
-  library.add(faHome, faStar, faTimes, faDoorClosed, faClipboardCheck, faMedal, faBookOpen);
+  library.add(
+    faHome,
+    faStar,
+    faTimes,
+    faDoorClosed,
+    faClipboardCheck,
+    faMedal,
+    faBookOpen,
+    faClock,
+    faKey,
+    faSmokingBan,
+    faSmoking,
+    faChild,
+    faBaby,
+    faPaw,
+    faUsersSlash,
+    faBell,
+  );
 
   return (
     <div>
@@ -47,7 +81,7 @@ const App = () => {
       <hr />
       <QuickInfo data={data} />
       <hr />
-      <Description data={data}/>
+      <Description data={data} />
       <hr />
       <BedInfos />
     </div>
