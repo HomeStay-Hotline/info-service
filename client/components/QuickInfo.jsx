@@ -27,8 +27,11 @@ const QuickInfo = (props) => {
   const [showClean, setShowClean] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
-  const closeModal = (state) => {
-    setShowClean(state);
+  const closeModal = (state, int) => {
+    if (int === 0) {
+      return setShowClean(state);
+    }
+    return setShowDetails(state);
   };
 
   return (
@@ -40,7 +43,7 @@ const QuickInfo = (props) => {
               <div className={styles.section}>
                 {' '}
                 <FontAwesomeIcon icon="home" />
-                <div>
+                <div className={styles.description}>
                   <div className={styles.info}>
                     Entire
                     {type}
@@ -154,6 +157,7 @@ const QuickInfo = (props) => {
                             smoking={smoking}
                             partiesEvents={partiesEvents}
                             additionalRules={additionalRules}
+                            closeModal={closeModal}
                           />
                         )
                         : null}
