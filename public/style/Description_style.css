@@ -2,3 +2,22 @@
 div {
     font-family: 'Montserrat', sans-serif;
 }
+
+.body {
+    width: 597px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+}
+
+.details {
+    font-size: 12px;
+}
+
+.header {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.expand {
+    font-size: 12px;
+}
