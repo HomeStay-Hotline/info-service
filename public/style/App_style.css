@@ -1,8 +1,10 @@
 
-div {
+body {
     font-family: 'Montserrat', sans-serif;
+    width: 597px;
 }
 
 hr {
     border-top: #DEDEDE;
+    width: 597px;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import styles from '../../public/style/App_style.css';
 // imported icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -10,6 +10,7 @@ import {
   faTimes,
   faClipboardCheck,
   faClock,
+  faBed,
   faKey,
   faSmokingBan,
   faSmoking,
@@ -25,7 +26,6 @@ import BedInfos from './BedInfos';
 import Description from './Description';
 import LodgeHeader from './LodgeHeader';
 import QuickInfo from './QuickInfo';
-import styles from '../../public/style/App_style.css';
 
 const axios = require('axios');
 
@@ -61,6 +61,8 @@ const App = () => {
     faStar,
     faTimes,
     faDoorClosed,
+    faMedal,
+    faBed,
     faClipboardCheck,
     faMedal,
     faBookOpen,
@@ -78,12 +80,12 @@ const App = () => {
   return (
     <div>
       <LodgeHeader data={data} />
-      <hr />
+      <hr className={styles.border} />
       <QuickInfo data={data} />
-      <hr />
+      <hr className={styles.border} />
       <Description data={data} />
-      <hr />
-      <BedInfos />
+      <hr className={styles.border} />
+      <BedInfos data={data} />
     </div>
   );
 };

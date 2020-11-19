@@ -18,15 +18,13 @@ const Description = (props) => {
   // const descriptionLength = description.length + desSpace.length + guestAccess.length + otherThings.length;
 
   let descriptionLength = [description, desSpace, guestAccess, otherThings];
-  console.log(descriptionLength, 'array version');
+
   descriptionLength = descriptionLength.reduce((total, str) => {
     if (str) {
       return total + str.length;
     }
     return total;
   }, 0);
-
-  console.log(descriptionLength, 'length of description');
 
   const handleClick = () => {
     changeLink(true);
@@ -38,18 +36,18 @@ const Description = (props) => {
       groupedInfo.push(description);
     }
     if (desSpace) {
-      groupedInfo.push('<b>{The Space}</b>', desSpace);
+      groupedInfo.push('The Space', desSpace);
     }
     if (guestAccess) {
-      groupedInfo.push('<b>{Guest Access}</b>', guestAccess);
+      groupedInfo.push('Guest Access', guestAccess);
     }
     if (otherThings) {
-      groupedInfo.push('<b>{Other Things To Note}</b>', otherThings);
+      groupedInfo.push('Other Things To Note', otherThings);
     }
-    const newInfo = groupedInfo.join('\n\n');
+    const newInfo = groupedInfo.join("\n");
     const truncatedString = newInfo.slice(0, 250);
     changeIsLong(true);
-    changeTruncateStr(truncatedString);
+    changeTruncateStr(`${truncatedString}...`);
   };
 
   if (descriptionLength > 250 && truncateStr === '') {
@@ -61,8 +59,8 @@ const Description = (props) => {
       <div className={styles.bodyText}>
         <div className={styles.text}>
           {truncateStr}
+          <button type="button" className={styles.expand} onClick={handleClick}>{link ? null : 'read more'}</button>
         </div>
-        <button type="button" className={styles.expand} onClick={handleClick}>{link ? null : 'read more'}</button>
         <div className={styles.contact}><a href="www.airbnb.com" className={styles.login}>Contact Host</a></div>
       </div>
     );
