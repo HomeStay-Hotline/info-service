@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../public/style/CleanModal_style.css';
 
-const CleanModal = (props) => {
-  const {
-    closeModal,
-  } = props;
+const CleanModal = ({ closeModal }) => {
+  // const {
+  //   closeModal,
+  // } = props;
 
   const handleClick = () => {
     closeModal(false, 0);

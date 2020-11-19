@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from '../../public/style/Bedinfos_style.css';
+import styles from '../../public/style/BedInfos_style.css';
 
-const BedInfos = (props) => {
-  const {
-    data: {
-      bedroom,
-      beds,
-    },
-  } = props;
+const BedInfos = ({ data }) => {
+  // const {
+  //   data: {
+  //     bedroom,
+  //     beds,
+  //   },
+  // } = props;
 
-  const bedroomArray = Array(bedroom).fill().map((e, i) => i + 1);
+  const bedroomArray = Array(data.bedroom).fill().map((e, i) => i + 1);
 
   return (
     <div>
@@ -22,7 +22,10 @@ const BedInfos = (props) => {
             <tr>
               <td><FontAwesomeIcon icon="bed" size="lg" /></td>
             </tr>
-            <tr className={styles.bed}>Bedroom{item}</tr>
+            <tr className={styles.bed}>
+              Bedroom
+              {item}
+            </tr>
             <tr className={styles.beddesc}>1 king bed</tr>
           </th>
         ))}

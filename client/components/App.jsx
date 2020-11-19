@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../public/style/App_style.css';
 // imported icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -26,12 +25,12 @@ import BedInfos from './BedInfos';
 import Description from './Description';
 import LodgeHeader from './LodgeHeader';
 import QuickInfo from './QuickInfo';
+import styles from '../../public/style/App_style.css';
 
 const axios = require('axios');
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [info, updateInfo] = useState([]);
+  const [data, setData] = useState({});
 
   const randomId = () => {
     const randomNum = Math.floor(Math.random() * Math.floor(100)) + 1;
@@ -76,6 +75,8 @@ const App = () => {
     faUsersSlash,
     faBell,
   );
+
+  console.log(typeof data);
 
   return (
     <div>

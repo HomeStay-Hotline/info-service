@@ -5,25 +5,25 @@ import styles from '../../public/style/QuickInfo_style.css';
 import CleanModal from './CleanModal';
 import GetDetailsModal from './GetDetailsModal';
 
-const QuickInfo = (props) => {
-  const {
-    data: {
-      checkIn,
-      checkOut,
-      selfCheckIn,
-      kidFriendly,
-      infantFriendly,
-      pets,
-      smoking,
-      partiesEvents,
-      additionalRules,
-      enhancedClean,
-      superhost,
-      entireLodge,
-      type,
-      hostname,
-    },
-  } = props;
+const QuickInfo = ({ data }) => {
+  // const {
+  //   data: {
+  //     checkIn,
+  //     checkOut,
+  //     selfCheckIn,
+  //     kidFriendly,
+  //     infantFriendly,
+  //     pets,
+  //     smoking,
+  //     partiesEvents,
+  //     additionalRules,
+  //     enhancedClean,
+  //     superhost,
+  //     entireLodge,
+  //     type,
+  //     hostname,
+  //   },
+  // } = props;
   const [showClean, setShowClean] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -38,7 +38,7 @@ const QuickInfo = (props) => {
     <div className={styles.main}>
       <div>
         {// check if entireLodge
-          entireLodge
+          data.entireLodge
             ? (
               <div className={styles.section}>
                 {' '}
@@ -46,11 +46,11 @@ const QuickInfo = (props) => {
                 <div className={styles.description}>
                   <div className={styles.info}>
                     Entire
-                    {type}
+                    {data.type}
                   </div>
                   <div className={styles.comment}>
                     You'll have the
-                    {type}
+                    {data.type}
                     {' '}
                     to yourself
                   </div>
@@ -60,7 +60,7 @@ const QuickInfo = (props) => {
             : null
 }
         {// check if enhancedclean
-            enhancedClean
+            data.enhancedClean
               ? (
                 <div className={styles.section}>
                   {' '}
@@ -89,7 +89,7 @@ const QuickInfo = (props) => {
               : null
 }
         {// check if selfcheckIn
-            selfCheckIn
+            data.selfCheckIn
               ? (
                 <div className={styles.section}>
                   {' '}
@@ -103,14 +103,14 @@ const QuickInfo = (props) => {
               : null
 }
         {
-            superhost
+            data.superhost
               ? (
                 <div className={styles.section}>
                   {' '}
                   <FontAwesomeIcon icon="medal" />
                   <div className={styles.description}>
                     <div className={styles.info}>
-                      {hostname}
+                      {data.hostname}
                       {' '}
                       is a Superhost
                     </div>
@@ -124,7 +124,7 @@ const QuickInfo = (props) => {
               : null
 }
         {
-            !partiesEvents
+            !data.partiesEvents
               ? (
                 <div className={styles.section}>
                   {' '}
@@ -137,6 +137,7 @@ const QuickInfo = (props) => {
                       <button
                         type="button"
                         className={styles.button}
+                        id="rules-button"
                         onClick={
                           () => {
                             setShowDetails(true);
@@ -148,15 +149,15 @@ const QuickInfo = (props) => {
                       {showDetails
                         ? (
                           <GetDetailsModal
-                            checkIn={checkIn}
-                            checkOut={checkOut}
-                            selfCheckIn={selfCheckIn}
-                            kidFriendly={kidFriendly}
-                            infantFriendly={infantFriendly}
-                            pets={pets}
-                            smoking={smoking}
-                            partiesEvents={partiesEvents}
-                            additionalRules={additionalRules}
+                            checkIn={data.checkIn}
+                            checkOut={data.checkOut}
+                            selfCheckIn={data.selfCheckIn}
+                            kidFriendly={data.kidFriendly}
+                            infantFriendly={data.infantFriendly}
+                            pets={data.pets}
+                            smoking={data.smoking}
+                            partiesEvents={data.partiesEvents}
+                            additionalRules={data.additionalRules}
                             closeModal={closeModal}
                           />
                         )
