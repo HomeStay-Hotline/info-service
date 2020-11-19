@@ -1,4 +1,4 @@
-import React, { useState, version } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../public/style/Description_style.css';
 
@@ -14,8 +14,6 @@ const Description = (props) => {
   const [link, changeLink] = useState(false);
   const [isLong, changeIsLong] = useState(false);
   const [truncateStr, changeTruncateStr] = useState('');
-
-  // const descriptionLength = description.length + desSpace.length + guestAccess.length + otherThings.length;
 
   let descriptionLength = [description, desSpace, guestAccess, otherThings];
 

@@ -5,25 +5,25 @@ import styles from '../../public/style/QuickInfo_style.css';
 import CleanModal from './CleanModal';
 import GetDetailsModal from './GetDetailsModal';
 
-const QuickInfo = (props) => {
-  const {
-    data: {
-      checkIn,
-      checkOut,
-      selfCheckIn,
-      kidFriendly,
-      infantFriendly,
-      pets,
-      smoking,
-      partiesEvents,
-      additionalRules,
-      enhancedClean,
-      superhost,
-      entireLodge,
-      type,
-      hostname,
-    },
-  } = props;
+const QuickInfo = ({ data }) => {
+  // const {
+  //   data: {
+  //     checkIn,
+  //     checkOut,
+  //     selfCheckIn,
+  //     kidFriendly,
+  //     infantFriendly,
+  //     pets,
+  //     smoking,
+  //     partiesEvents,
+  //     additionalRules,
+  //     enhancedClean,
+  //     superhost,
+  //     entireLodge,
+  //     type,
+  //     hostname,
+  //   },
+  // } = props;
   const [showClean, setShowClean] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
