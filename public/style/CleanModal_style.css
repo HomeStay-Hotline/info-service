@@ -28,7 +28,8 @@ div {
   left: 50%;
   width: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 20px;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.6s;
   animation-name: slideIn;
@@ -56,6 +57,28 @@ div {
     to {opacity: 1}
   }
 
+  .heading {
+    font-size: 18px;
+    font-weight: bold; 
+  }
+
+  .maininfo {
+    font-weight: bold;
+  }
+
+  .info {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .rules {
+    font-size: 10px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
   .button {
     background-color: white; 
     border: none; 
@@ -66,4 +89,5 @@ div {
   .button:hover {
   background-color: silver;
 }
+
 

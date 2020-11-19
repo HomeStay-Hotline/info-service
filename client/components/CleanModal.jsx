@@ -9,7 +9,7 @@ const CleanModal = (props) => {
   } = props;
 
   const handleClick = () => {
-    closeModal(false);
+    closeModal(false, 0);
   };
 
   return (
@@ -27,7 +27,7 @@ const CleanModal = (props) => {
         <div>
           <FontAwesomeIcon icon="star" size="4x" />
           <span className={styles.heading}>Enhanced Clean</span>
-          <p>
+          <p className={styles.info}>
             committed to Airbnb’s 5-step enhanced cleaning process—a set of standards develope
             d in partnership with experts, for the times of COVID-19 and beyond.
           </p>
@@ -38,15 +38,15 @@ const CleanModal = (props) => {
             <tr>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Sanitize surfaces</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Sanitize surfaces</div>
                   Sanitize every high-touch surface, down to the doorknob
                 </div>
               </td>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Thoroughly clean</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Thoroughly clean</div>
                   Refer to our extensive checklists while cleaning room-by-room
                 </div>
               </td>
@@ -54,15 +54,15 @@ const CleanModal = (props) => {
             <tr>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Wash all linens</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Wash all linens</div>
                   Wash linens at a high heat setting
                 </div>
               </td>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Use approved products</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Use approved products</div>
                   Use cleaners approved by health experts, like disinfectants with 70% alcohol
                   or higher
                 </div>
@@ -71,15 +71,15 @@ const CleanModal = (props) => {
             <tr>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Wear a mask and gloves</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Wear a mask and gloves</div>
                   Help avoid cross-contamination by wearing a mask and gloves
                 </div>
               </td>
               <td>
                 <div><FontAwesomeIcon icon="clipboard-check" /></div>
-                <div>
-                  <div>Follow all other local guidance</div>
+                <div className={styles.info}>
+                  <div className={styles.maininfo}>Follow all other local guidance</div>
                   Comply with local laws, including any additional safety or cleaning guidelines
                 </div>
               </td>

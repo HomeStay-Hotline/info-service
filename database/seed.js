@@ -67,8 +67,8 @@ const seedData = () => {
       generateRandomBoolean(),
       lodgeType(),
       faker.random.number({ min: 1, max: 10 }),
-      faker.random.number({ min: 0, max: 10 }),
-      faker.random.number({ min: 1, max: 10 }),
+      faker.random.number({ min: 1, max: 5 }),
+      faker.random.number({ min: 1, max: 5 }),
       faker.random.number({ min: 1, max: 3 }),
     ];
     db.connection.query(sql2, values2, (err) => {
