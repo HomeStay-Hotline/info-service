@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../public/style/Description_style.css';
 
-const Description = (props) => {
-  const {
-    data: {
-      description,
-      desSpace,
-      guestAccess,
-      otherThings,
-    },
-  } = props;
+const Description = ({ data }) => {
+  // const {
+  //   data: {
+  //     description,
+  //     desSpace,
+  //     guestAccess,
+  //     otherThings,
+  //   },
+  // } = props;
   const [link, changeLink] = useState(false);
   const [isLong, changeIsLong] = useState(false);
   const [truncateStr, changeTruncateStr] = useState('');
 
-  let descriptionLength = [description, desSpace, guestAccess, otherThings];
+  let descriptionLength = [data.description, data.desSpace, data.guestAccess, data.otherThings];
 
   descriptionLength = descriptionLength.reduce((total, str) => {
     if (str) {
@@ -30,17 +30,17 @@ const Description = (props) => {
 
   const stringifyAll = () => {
     const groupedInfo = [];
-    if (description) {
-      groupedInfo.push(description);
+    if (data.description) {
+      groupedInfo.push(data.description);
     }
-    if (desSpace) {
-      groupedInfo.push('The Space', desSpace);
+    if (data.desSpace) {
+      groupedInfo.push('The Space', data.desSpace);
     }
-    if (guestAccess) {
-      groupedInfo.push('Guest Access', guestAccess);
+    if (data.guestAccess) {
+      groupedInfo.push('Guest Access', data.guestAccess);
     }
-    if (otherThings) {
-      groupedInfo.push('Other Things To Note', otherThings);
+    if (data.otherThings) {
+      groupedInfo.push('Other Things To Note', data.otherThings);
     }
     const newInfo = groupedInfo.join("\n");
     const truncatedString = newInfo.slice(0, 250);
@@ -67,42 +67,42 @@ const Description = (props) => {
     <div className={styles.bodyText}>
       <div className={styles.text}>
         {
-         description
-           ? <span className={styles.details}>{description}</span>
+          data.description
+           ? <span className={styles.details}>{data.description}</span>
            : null
         }
         {
-        desSpace
+          data.desSpace
           ? (
             <div>
               <p />
               <span className={styles.header}>The space</span>
               <br />
-              <span className={styles.details}>{desSpace}</span>
+              <span className={styles.details}>{data.desSpace}</span>
             </div>
           )
           : null
         }
         {
-         guestAccess
+          data.guestAccess
            ? (
              <div>
                <p />
                <span className={styles.header}>Guest Access</span>
                <br />
-               <span className={styles.details}>{guestAccess}</span>
+               <span className={styles.details}>{data.guestAccess}</span>
              </div>
            )
            : null
         }
         {
-          otherThings
+          data.otherThings
             ? (
               <div>
                 <p />
                 <span className={styles.header}>Other Things To Note</span>
                 <p />
-                <span className={styles.details}>{otherThings}</span>
+                <span className={styles.details}>{data.otherThings}</span>
               </div>
             )
             : null

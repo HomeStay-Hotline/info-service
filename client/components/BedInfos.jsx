@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../public/style/BedInfos_style.css';
 
-const BedInfos = (props) => {
-  const {
-    data: {
-      bedroom,
-      beds,
-    },
-  } = props;
+const BedInfos = ({ data }) => {
+  // const {
+  //   data: {
+  //     bedroom,
+  //     beds,
+  //   },
+  // } = props;
 
-  const bedroomArray = Array(bedroom).fill().map((e, i) => i + 1);
+  const bedroomArray = Array(data.bedroom).fill().map((e, i) => i + 1);
 
   return (
     <div>
