@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme';
-import { TestScheduler } from 'jest';
 import React from 'react';
 import Description from '../client/components/Description';
 
