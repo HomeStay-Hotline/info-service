@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../public/style/lodgeheader_style.css';
 
 const LodgeHeader = (props) => {
   const {
     data: {
-      entireLodge, hostname, type, maxGuests, bedroom, beds, bath, hostimg,
+      entireLodge, hostname, type, maxGuests, bedroom, superhost, beds, bath, hostimg,
     },
   } = props;
   const [lodgetype, changeType] = useState(true);
@@ -54,7 +55,10 @@ const LodgeHeader = (props) => {
         </div>
       </div>
       <div className={styles.hostimage}>
-        <img className={styles.imagesize} src={hostimg} alt="host" />
+        <img className={styles.hostImageBottom} src={hostimg} alt="host" />
+        {superhost
+          ? <FontAwesomeIcon icon="medal" size="2x" className={styles.superhostImageTop} />
+          : null}
       </div>
     </div>
   );
@@ -69,6 +73,7 @@ LodgeHeader.propTypes = {
     bedroom: PropTypes.number.isRequired,
     beds: PropTypes.number.isRequired,
     bath: PropTypes.number.isRequired,
+    superhost: PropTypes.bool.isRequired,
     hostimg: PropTypes.string.isRequired,
   }).isRequired,
 };

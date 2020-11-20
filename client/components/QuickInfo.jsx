@@ -42,14 +42,14 @@ const QuickInfo = ({ data }) => {
             ? (
               <div className={styles.section}>
                 {' '}
-                <FontAwesomeIcon icon="home" />
+                <FontAwesomeIcon icon="home" size="1x" />
                 <div className={styles.description}>
                   <div className={styles.info}>
-                    Entire
+                    Entire{' '}
                     {data.type}
                   </div>
                   <div className={styles.comment}>
-                    You'll have the
+                    You'll have the{' '}
                     {data.type}
                     {' '}
                     to yourself
