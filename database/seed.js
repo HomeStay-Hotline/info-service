@@ -2,7 +2,7 @@ const faker = require('faker');
 const db = require('./index.js');
 
 const generateRandomBoolean = () => {
-  const result = Math.floor(Math.random() * Math.floor(2));
+  const result = Math.floor(Math.random() * Math.floor(3));
   if (result === 1) {
     return false;
   }

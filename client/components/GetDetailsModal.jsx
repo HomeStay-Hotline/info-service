@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from '../../public/style/CleanModal_style.css';
+import styles from '../../public/style/Modal_style.css';
 
 const GetDetailsModal = (props) => {
   const {
@@ -36,28 +36,34 @@ const GetDetailsModal = (props) => {
         <span className={styles.heading}>
           House rules
         </span>
-        <table>
+        <table id="rules">
           <tr>
-            <div><FontAwesomeIcon icon="clock" /></div>
-            <div className={styles.rules}>
-              Check-In: After
-              {checkIn}
-              :00 PM
+            <div className={styles.rulegroup}>
+              <div><FontAwesomeIcon icon="clock" size="1px" /></div>
+              <div className={styles.rules}>
+                Check-In:{' '}After{' '}
+                {checkIn}
+                :00 PM
+              </div>
             </div>
           </tr>
           <tr>
-            <div><FontAwesomeIcon icon="clock" /></div>
-            <div className={styles.rules}>
-              Check-Out:
-              {checkOut}
-              :00 AM
+            <div className={styles.rulegroup}>
+              <div><FontAwesomeIcon icon="clock" /></div>
+              <div className={styles.rules}>
+                Check-Out:
+                {checkOut}
+                :00 AM
+              </div>
             </div>
           </tr>
           { selfCheckIn
             ? (
               <tr>
-                <div><FontAwesomeIcon icon="key" /></div>
-                <div className={styles.rules}>Self check-in with lockbox</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="key" /></div>
+                  <div className={styles.rules}>Self check-in with lockbox</div>
+                </div>
               </tr>
             )
             : null}
@@ -65,50 +71,66 @@ const GetDetailsModal = (props) => {
             ? null
             : (
               <tr>
-                <div><FontAwesomeIcon icon="times" /></div>
-                <div className={styles.rules}>Not suitable for (2-12years)</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="times" /></div>
+                  <div className={styles.rules}>Not suitable for (2-12years)</div>
+                </div>
+                {' '}
+
               </tr>
             )}
           { infantFriendly
             ? null
             : (
               <tr>
-                <div><FontAwesomeIcon icon="times" /></div>
-                <div className={styles.rules}>Not suitable for (0-2years)</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="times" /></div>
+                  <div className={styles.rules}>Not suitable for (0-2years)</div>
+                </div>
               </tr>
             )}
           { pets
             ? (
               <tr>
-                <div><FontAwesomeIcon icon="paw" /></div>
-                <div className={styles.rules}>Pets are allowed</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="paw" /></div>
+                  <div className={styles.rules}>Pets are allowed</div>
+                </div>
               </tr>
             )
             : (
               <tr>
-                <div><FontAwesomeIcon icon="times" /></div>
-                <div className={styles.rules}>No pets allowed</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="times" /></div>
+                  <div className={styles.rules}>No pets allowed</div>
+                </div>
               </tr>
             )}
           { smoking
             ? (
               <tr>
-                <div><FontAwesomeIcon icon="smoking" /></div>
-                <div className={styles.rules}>Smoking is allowed</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="smoking" /></div>
+                  <div className={styles.rules}>Smoking is allowed</div>
+                </div>
               </tr>
             )
             : (
               <tr>
-                <div><FontAwesomeIcon icon="smoking-ban" /></div>
-                <div className={styles.rules}>Smoking is not allowed</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="smoking-ban" /></div>
+                  <div className={styles.rules}>Smoking is not allowed</div>
+                </div>
               </tr>
             )}
           { partiesEvents
             ? null
             : (
               <tr>
-                <div><FontAwesomeIcon icon="bell" /></div>
-                <div className={styles.rules}>No parties or events</div>
+                <div className={styles.rulegroup}>
+                  <div><FontAwesomeIcon icon="bell" /></div>
+                  <div className={styles.rules}>No parties or events</div>
+                </div>
               </tr>
             )}
         </table>

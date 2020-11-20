@@ -17,6 +17,8 @@ const Description = ({ data }) => {
 
   let descriptionLength = [data.description, data.desSpace, data.guestAccess, data.otherThings];
 
+  const url = 'http://www.airbnb.com';
+
   descriptionLength = descriptionLength.reduce((total, str) => {
     if (str) {
       return total + str.length;
@@ -42,7 +44,7 @@ const Description = ({ data }) => {
     if (data.otherThings) {
       groupedInfo.push('Other Things To Note', data.otherThings);
     }
-    const newInfo = groupedInfo.join("\n");
+    const newInfo = groupedInfo.join('\n');
     const truncatedString = newInfo.slice(0, 250);
     changeIsLong(true);
     changeTruncateStr(`${truncatedString}...`);
@@ -59,7 +61,9 @@ const Description = ({ data }) => {
           {truncateStr}
           <button type="button" className={styles.expand} onClick={handleClick}>{link ? null : 'read more'}</button>
         </div>
-        <div className={styles.contact}><a href="www.airbnb.com" className={styles.login}>Contact Host</a></div>
+        <div className={styles.contact}>
+          <a href={url} className={styles.login}>Contact Host</a>
+        </div>
       </div>
     );
   }
@@ -68,32 +72,32 @@ const Description = ({ data }) => {
       <div className={styles.text}>
         {
           data.description
-           ? <span className={styles.details}>{data.description}</span>
-           : null
+            ? <span className={styles.details}>{data.description}</span>
+            : null
         }
         {
           data.desSpace
-          ? (
-            <div>
-              <p />
-              <span className={styles.header}>The space</span>
-              <br />
-              <span className={styles.details}>{data.desSpace}</span>
-            </div>
-          )
-          : null
+            ? (
+              <div>
+                <p />
+                <span className={styles.header}>The space</span>
+                <br />
+                <span className={styles.details}>{data.desSpace}</span>
+              </div>
+            )
+            : null
         }
         {
           data.guestAccess
-           ? (
-             <div>
-               <p />
-               <span className={styles.header}>Guest Access</span>
-               <br />
-               <span className={styles.details}>{data.guestAccess}</span>
-             </div>
-           )
-           : null
+            ? (
+              <div>
+                <p />
+                <span className={styles.header}>Guest Access</span>
+                <br />
+                <span className={styles.details}>{data.guestAccess}</span>
+              </div>
+            )
+            : null
         }
         {
           data.otherThings
@@ -108,7 +112,7 @@ const Description = ({ data }) => {
             : null
         }
       </div>
-      <div className={styles.contact}><a href="www.airbnb.com" className={styles.login}>Contact Host</a></div>
+      <div className={styles.contact}><a href={url} className={styles.login}>Contact Host</a></div>
     </div>
   );
 };

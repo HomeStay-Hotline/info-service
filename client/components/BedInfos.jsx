@@ -22,9 +22,11 @@ const BedInfos = ({ data }) => {
             <tr>
               <td><FontAwesomeIcon icon="bed" size="lg" /></td>
             </tr>
-            <tr className={styles.bed}>
-              Bedroom
-              {item}
+            <tr>
+              <div className={styles.bed}>
+                Bedroom
+                {' '}{item}
+              </div>
             </tr>
             <tr className={styles.beddesc}>1 king bed</tr>
           </th>
