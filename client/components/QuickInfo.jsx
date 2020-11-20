@@ -6,24 +6,6 @@ import CleanModal from './CleanModal';
 import GetDetailsModal from './GetDetailsModal';
 
 const QuickInfo = ({ data }) => {
-  // const {
-  //   data: {
-  //     checkIn,
-  //     checkOut,
-  //     selfCheckIn,
-  //     kidFriendly,
-  //     infantFriendly,
-  //     pets,
-  //     smoking,
-  //     partiesEvents,
-  //     additionalRules,
-  //     enhancedClean,
-  //     superhost,
-  //     entireLodge,
-  //     type,
-  //     hostname,
-  //   },
-  // } = props;
   const [showClean, setShowClean] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -45,11 +27,13 @@ const QuickInfo = ({ data }) => {
                 <FontAwesomeIcon icon="home" size="1x" />
                 <div className={styles.description}>
                   <div className={styles.info}>
-                    Entire{' '}
+                    Entire
+                    {' '}
                     {data.type}
                   </div>
                   <div className={styles.comment}>
-                    You'll have the{' '}
+                    You'll have the
+                    {' '}
                     {data.type}
                     {' '}
                     to yourself
@@ -71,6 +55,7 @@ const QuickInfo = ({ data }) => {
                       This host committed to Airbnb's 5-step enhanced cleaning process.
                       <button
                         type="button"
+                        id="clean-button"
                         className={styles.button}
                         onClick={
                           () => {

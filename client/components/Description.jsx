@@ -3,14 +3,6 @@ import PropTypes from 'prop-types';
 import styles from '../../public/style/Description_style.css';
 
 const Description = ({ data }) => {
-  // const {
-  //   data: {
-  //     description,
-  //     desSpace,
-  //     guestAccess,
-  //     otherThings,
-  //   },
-  // } = props;
   const [link, changeLink] = useState(false);
   const [isLong, changeIsLong] = useState(false);
   const [truncateStr, changeTruncateStr] = useState('');
