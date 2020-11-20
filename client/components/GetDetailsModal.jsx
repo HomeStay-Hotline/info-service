@@ -41,7 +41,10 @@ const GetDetailsModal = (props) => {
             <div className={styles.rulegroup}>
               <div><FontAwesomeIcon icon="clock" size="1px" /></div>
               <div className={styles.rules}>
-                Check-In:{' '}After{' '}
+                Check-In:
+                {' '}
+                After
+                {' '}
                 {checkIn}
                 :00 PM
               </div>

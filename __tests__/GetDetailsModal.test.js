@@ -1,38 +1,41 @@
-import { shallow, ShallowWrapper } from 'enzyme';
-import { TestScheduler } from 'jest';
-import React, { useState as useStateMock } from 'react';
+import { shallow } from 'enzyme';
+import React from 'react';
 import GetDetailsModal from '../client/components/GetDetailsModal';
 
-const exdata = {
-  checkIn: 3,
-  checkOut: 4,
-  selfCheckIn: true,
-  kidFriendly: true,
-  infantFriendly: true,
-  pets: true,
-  smoking: true,
-  partiesEvents: true,
-  additionalRules: '',
-  closeModal: () => {},
-};
+const bool = false;
+const num = 3;
+const str = 'blahblah';
 
 describe('<GetDetailsModal >', () => {
   let wrapper;
+  let mockModal;
+
+  beforeEach(() => {
+    mockModal = jest.fn();
+    wrapper = shallow(<GetDetailsModal
+      checkIn={num}
+      checkOut={num}
+      selfCheckIn={bool}
+      kidFriendly={bool}
+      infantFriendly={bool}
+      pets={bool}
+      smoking={bool}
+      partiesEvents={bool}
+      additionalRules={str}
+      closeModal={mockModal}
+    />);
+  });
 
   test('should render QuickInfo component on the browser', () => {
-    wrapper = shallow(<GetDetailsModal
-      checkIn={exdata.checkIn}
-      checkOut={exdata.checkOut}
-      selfCheckIn={exdata.selfCheckIn}
-      kidFriendly={exdata.kidFriendly}
-      infantFriendly={exdata.infantFriendly}
-      pets={exdata.pets}
-      smoking={exdata.smoking}
-      partiesEvents={exdata.partiesEvents}
-      additionalRules={exdata.additionalRules}
-      closeModal={exdata.closeModal}
-    />);
-
     expect(wrapper).toBeTruthy();
   });
+
+  test('should call handleClick function when clicked', () => {
+    wrapper.find('button').simulate('click');
+    expect(mockModal).toHaveBeenCalled();
+  });
+
+  test.todo('should show info if kidfriendly is true');
+
+  test.todo('should show null if kidfriendly is false');
 });

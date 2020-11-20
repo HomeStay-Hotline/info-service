@@ -21,5 +21,5 @@ describe('<App />', () => {
   //   expect(mock).toHaveBeenCalled();
   // });
 
-  test('render the initial value of state in a div', () => {});
+  test('render the initial value of state in a div', ();
 });
