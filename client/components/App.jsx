@@ -32,10 +32,10 @@ const axios = require('axios');
 const App = () => {
   const [data, setData] = useState({});
 
-  const randomId = () => {
-    const randomNum = Math.floor(Math.random() * Math.floor(100)) + 1;
-    return randomNum;
-  };
+  // const randomId = () => {
+  //   const randomNum = Math.floor(Math.random() * Math.floor(100)) + 1;
+  //   return randomNum;
+  // };
 
   const loadData = (id) => {
     axios.get(`/api/homes/${id}/info`)
@@ -48,7 +48,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    loadData(randomId());
+    let name = window.location.pathname;
+    let newN = name.split('/');
+    console.log(newN);
+    loadData(newN[1]);
   }, []);
 
   if (!data) {

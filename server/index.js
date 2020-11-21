@@ -5,11 +5,13 @@ const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
-app.use(express.static('public'));
+app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
-  res.send('hello from server');
-});
+app.use('/:id', express.static('public'));
+
+// app.get('/', (req, res) => {
+//   res.send('hello from server');
+// });
 
 app.get('/api/homes/:id/info', (req, res) => {
   db.getAllInfo(req.params.id, (err, data) => {
@@ -17,6 +19,7 @@ app.get('/api/homes/:id/info', (req, res) => {
       console.log(err);
       res.end();
     }
+    console.log(req.params.id, 'it is running');
     res.send(data);
   });
 });
