@@ -37,7 +37,7 @@ describe('<QuickInfo />', () => {
   test('should setShowClean to be true when clicked', () => {
     const handleClick = jest.spyOn(React, 'useState');
     setShowClean = jest.fn();
-    wrapper = mount(<QuickInfo data={exampleData} />);
+    wrapper = shallow(<QuickInfo data={exampleData} />);
     handleClick.mockImplementation((showClean) => [showClean, setShowClean]);
 
     wrapper.find('#clean-button').simulate('click');

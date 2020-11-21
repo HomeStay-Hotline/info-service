@@ -12,6 +12,7 @@ describe('<App />', () => {
     expect(wrapper).toBeTruthy();
   });
 
+  // useeffect can't be tested
   // test('should invoke loadData on useEffect', () => {
   //   const mock = jest.fn();
   //   wrapper.instance().loadData = mock;
@@ -21,5 +22,5 @@ describe('<App />', () => {
   //   expect(mock).toHaveBeenCalled();
   // });
 
-  test('render the initial value of state in a div', ();
+  test('render the initial value of state in a div', () => {});
 });
