@@ -48,8 +48,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    let name = window.location.pathname;
-    let newN = name.split('/');
+    const name = window.location.pathname;
+    const newN = name.split('/');
     console.log(newN);
     loadData(newN[1]);
   }, []);

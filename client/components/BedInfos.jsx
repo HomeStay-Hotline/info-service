@@ -25,7 +25,8 @@ const BedInfos = ({ data }) => {
             <tr>
               <div className={styles.bed}>
                 Bedroom
-                {' '}{item}
+                {' '}
+                {item}
               </div>
             </tr>
             <tr className={styles.beddesc}>1 king bed</tr>
