@@ -50,7 +50,6 @@ const App = () => {
   useEffect(() => {
     const name = window.location.pathname;
     const newN = name.split('/');
-    console.log(newN);
     loadData(newN[1]);
   }, []);
 
@@ -78,8 +77,6 @@ const App = () => {
     faUsersSlash,
     faBell,
   );
-
-  console.log(typeof data);
 
   return (
     <div>
