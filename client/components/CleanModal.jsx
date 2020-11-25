@@ -35,67 +35,69 @@ const CleanModal = ({ closeModal }) => {
         </div>
         <div>
           <table id="cleanModal">
-            <tr>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Sanitize surfaces</div>
-                    Sanitize every high-touch surface, down to the doorknob
+            <tbody>
+              <tr>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Sanitize surfaces</div>
+                      Sanitize every high-touch surface, down to the doorknob
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Thoroughly clean</div>
-                    Refer to our extensive checklists while cleaning room-by-room
+                </td>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Thoroughly clean</div>
+                      Refer to our extensive checklists while cleaning room-by-room
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Wash all linens</div>
-                    Wash linens at a high heat setting
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Wash all linens</div>
+                      Wash linens at a high heat setting
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Use approved products</div>
-                    Use cleaners approved by health experts, like disinfectants with 70% alcohol
-                    or higher
+                </td>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Use approved products</div>
+                      Use cleaners approved by health experts, like disinfectants with 70% alcohol
+                      or higher
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Wear a mask and gloves</div>
-                    Help avoid cross-contamination by wearing a mask and gloves
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Wear a mask and gloves</div>
+                      Help avoid cross-contamination by wearing a mask and gloves
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td>
-                <div className={styles.tablecolumn}>
-                  <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
-                  <div className={styles.info}>
-                    <div className={styles.maininfo}>Follow all other local guidance</div>
-                    Comply with local laws, including any additional safety or cleaning guidelines
+                </td>
+                <td>
+                  <div className={styles.tablecolumn}>
+                    <div className={styles.info}><FontAwesomeIcon icon="clipboard-check" size="2x" /></div>
+                    <div className={styles.info}>
+                      <div className={styles.maininfo}>Follow all other local guidance</div>
+                      Comply with local laws, including any additional safety or cleaning guidelines
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div />

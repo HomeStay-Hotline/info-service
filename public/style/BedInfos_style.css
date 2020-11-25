@@ -4,22 +4,24 @@ body {
     width: 597px;
 }
 
-th {
+.table {
+    display: flex;
+    flex-direction: row;
+}
+
+.part {
     width: 200px; 
     height: 100px; 
     border: 1px solid #8f8c8c;
     border-radius: 10px; 
+    padding: 10px 10px 10px 10px
 }
 
-td {
+/* td {
     position: static; 
     padding-top: 10px;
     vertical-align: center;
-}
-
-tr {
-    vertical-align: center;
-}
+} */
 
 .bed {
     padding-top: 20px;

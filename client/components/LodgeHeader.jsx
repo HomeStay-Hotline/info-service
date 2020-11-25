@@ -73,7 +73,7 @@ LodgeHeader.propTypes = {
     bedroom: PropTypes.number.isRequired,
     beds: PropTypes.number.isRequired,
     bath: PropTypes.number.isRequired,
-    superhost: PropTypes.bool.isRequired,
+    superhost: PropTypes.number.isRequired,
     hostimg: PropTypes.string.isRequired,
   }).isRequired,
 };

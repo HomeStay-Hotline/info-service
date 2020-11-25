@@ -4,35 +4,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../public/style/BedInfos_style.css';
 
 const BedInfos = ({ data }) => {
-  // const {
-  //   data: {
-  //     bedroom,
-  //     beds,
-  //   },
-  // } = props;
-
   const bedroomArray = Array(data.bedroom).fill().map((e, i) => i + 1);
 
   return (
     <div>
       <h4>Sleeping Arrangements</h4>
-      <table className={styles.table}>
+      <div className={styles.table}>
         {bedroomArray.map((item) => (
-          <th className={styles.part}>
-            <tr>
-              <td><FontAwesomeIcon icon="bed" size="lg" /></td>
-            </tr>
-            <tr>
-              <div className={styles.bed}>
-                Bedroom
-                {' '}
-                {item}
-              </div>
-            </tr>
-            <tr className={styles.beddesc}>1 king bed</tr>
-          </th>
+          <div className={styles.part} key={item}>
+            <div><FontAwesomeIcon icon="bed" size="lg" /></div>
+            <div className={styles.bed}>
+              Bedroom
+              {' '}
+              {item}
+            </div>
+            <div className={styles.beddesc}>1 king bed</div>
+          </div>
         ))}
-      </table>
+      </div>
     </div>
   );
 };
@@ -45,3 +34,26 @@ BedInfos.propTypes = {
 };
 
 export default BedInfos;
+
+// return (
+//   <div>
+//     <h4>Sleeping Arrangements</h4>
+//     <table className={styles.table}>
+//       {bedroomArray.map((item, index) => (
+//         <th className={styles.part}>
+//           <tr>
+//             <td><FontAwesomeIcon icon="bed" size="lg" /></td>
+//           </tr>
+//           <tr>
+//             <div className={styles.bed}>
+//               Bedroom
+//               {' '}
+//               {item}
+//             </div>
+//           </tr>
+//           <tr className={styles.beddesc}>1 king bed</tr>
+//         </th>
+//       ))}
+//     </table>
+//   </div>
+// );
