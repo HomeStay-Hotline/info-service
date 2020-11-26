@@ -9,10 +9,6 @@ app.use(morgan('dev'));
 
 app.use('/:id', express.static('public'));
 
-// app.get('/', (req, res) => {
-//   res.send('hello from server');
-// });
-
 app.get('/api/homes/:id/info', (req, res) => {
   db.getAllInfo(req.params.id, (err, data) => {
     if (err) {
