@@ -81,11 +81,11 @@ const App = () => {
   return (
     <div>
       <LodgeHeader data={data} />
-      <hr className={styles.border} />
+      <hr className={styles.aborder} />
       <QuickInfo data={data} />
-      <hr className={styles.border} />
+      <hr className={styles.aborder} />
       <Description data={data} />
-      <hr className={styles.border} />
+      <hr className={styles.aborder} />
       <BedInfos data={data} />
     </div>
   );

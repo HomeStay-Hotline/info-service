@@ -1,10 +1,10 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    width: 597px;
+    max-width: 597px;
 }
 
-hr {
+.aborder {
     border-top: #DEDEDE;
-    width: 597px;
+    max-width: 597px;
 }

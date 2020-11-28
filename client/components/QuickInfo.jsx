@@ -17,21 +17,21 @@ const QuickInfo = ({ data }) => {
   };
 
   return (
-    <div className={styles.main}>
+    <div className={styles.qfmain}>
       <div>
         {// check if entireLodge
           data.entireLodge
             ? (
-              <div className={styles.section}>
+              <div className={styles.qfsection}>
                 {' '}
                 <FontAwesomeIcon icon="home" size="1x" />
-                <div className={styles.description}>
-                  <div className={styles.info}>
+                <div className={styles.qfdescription}>
+                  <div className={styles.qfinfo}>
                     Entire
                     {' '}
                     {data.type}
                   </div>
-                  <div className={styles.comment}>
+                  <div className={styles.qfcomment}>
                     You'll have the
                     {' '}
                     {data.type}
@@ -46,12 +46,12 @@ const QuickInfo = ({ data }) => {
         {// check if enhancedclean
             data.enhancedClean
               ? (
-                <div className={styles.section}>
+                <div className={styles.qfsection}>
                   {' '}
                   <FontAwesomeIcon icon="star" />
-                  <div className={styles.description}>
-                    <div className={styles.info}>Enhanced Clean</div>
-                    <div className={styles.comment}>
+                  <div className={styles.qfdescription}>
+                    <div className={styles.qfinfo}>Enhanced Clean</div>
+                    <div className={styles.qfcomment}>
                       This host committed to Airbnb's 5-step enhanced cleaning process.
                       <button
                         type="button"
@@ -76,12 +76,12 @@ const QuickInfo = ({ data }) => {
         {// check if selfcheckIn
             data.selfCheckIn
               ? (
-                <div className={styles.section}>
+                <div className={styles.qfsection}>
                   {' '}
                   <FontAwesomeIcon icon="door-closed" />
-                  <div className={styles.description}>
-                    <div className={styles.info}>Self check-in</div>
-                    <div className={styles.comment}>Check yourself in with the lockbox.</div>
+                  <div className={styles.qfdescription}>
+                    <div className={styles.qfinfo}>Self check-in</div>
+                    <div className={styles.qfcomment}>Check yourself in with the lockbox.</div>
                   </div>
                 </div>
               )
@@ -90,16 +90,16 @@ const QuickInfo = ({ data }) => {
         {
             data.superhost
               ? (
-                <div className={styles.section}>
+                <div className={styles.qfsection}>
                   {' '}
                   <FontAwesomeIcon icon="medal" />
-                  <div className={styles.description}>
-                    <div className={styles.info}>
+                  <div className={styles.qfdescription}>
+                    <div className={styles.qfinfo}>
                       {data.hostname}
                       {' '}
                       is a Superhost
                     </div>
-                    <div className={styles.comment}>
+                    <div className={styles.qfcomment}>
                       Superhosts are experienced, highly rated hosts who are
                       committed to providing great stays for guests.
                     </div>
@@ -111,17 +111,17 @@ const QuickInfo = ({ data }) => {
         {
             !data.partiesEvents
               ? (
-                <div className={styles.section}>
+                <div className={styles.qfsection}>
                   {' '}
                   <FontAwesomeIcon icon="book-open" />
-                  <div className={styles.description}>
-                    <div className={styles.info}>House rules</div>
-                    <div className={styles.comment}>
+                  <div className={styles.qfdescription}>
+                    <div className={styles.qfinfo}>House rules</div>
+                    <div className={styles.qfcomment}>
                       The host doesn’t allow
                       parties or smoking.
                       <button
                         type="button"
-                        className={styles.button}
+                        className={styles.qfbutton}
                         id="rules-button"
                         onClick={
                           () => {
