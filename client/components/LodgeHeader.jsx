@@ -18,9 +18,9 @@ const LodgeHeader = (props) => {
   });
 
   return (
-    <div className={styles.border}>
-      <div className={styles.divider}>
-        <div className={styles.header}>
+    <div className={styles.l_border}>
+      <div className={styles.l_divider}>
+        <div className={styles.l_header}>
           {lodgetype ? 'Entire ' : 'Private Room in '}
           {type}
           {' '}
@@ -28,7 +28,7 @@ const LodgeHeader = (props) => {
           {' '}
           {hostname}
         </div>
-        <div className={styles.subheader}>
+        <div className={styles.l_subheader}>
           <span>
             {maxGuests}
             {' '}
@@ -54,10 +54,10 @@ const LodgeHeader = (props) => {
           </span>
         </div>
       </div>
-      <div className={styles.hostimage}>
-        <img className={styles.hostImageBottom} src={hostimg} alt="host" />
+      <div className={styles.l_hostimage}>
+        <img className={styles.l_hostImageBottom} src={hostimg} alt="host" />
         {superhost
-          ? <FontAwesomeIcon icon="medal" size="2x" className={styles.superhostImageTop} />
+          ? <FontAwesomeIcon icon="medal" size="2x" className={styles.l_superhostImageTop} />
           : null}
       </div>
     </div>

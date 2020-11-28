@@ -3,7 +3,7 @@ div {
     font-family: 'Montserrat', sans-serif;
 }
 
-.border {
+.l_border {
     padding-top: 48px;
     padding-bottom: 15px;
     width: 560px;
@@ -11,24 +11,24 @@ div {
     display: flex;
 }
 
-.divider {
+.l_divider {
     width: 80%;
     height: 56px;
 }
 
-.header {
+.l_header {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: bold; 
   padding-bottom: 10px;
 }
 
-.subheader {
+.l_subheader {
     font-size: 12px;
     padding-bottom: 10px;
 }
 
-.hostimage {
+.l_hostimage {
   width: 10%;
   height: 56px;
   padding-left: 42px;
@@ -38,7 +38,7 @@ div {
   position: relative;
 }
 
-.hostImageBottom {
+.l_hostImageBottom {
   width: 56px;
   height: 56px;
   border-radius: 500px; 
@@ -47,7 +47,7 @@ div {
   grid-column: 1 / span 5;
 }
 
-.hostImageBottom:hover {
+.l_hostImageBottom:hover {
   width: 56px;
   height: 56px;
   cursor: hand;
@@ -56,7 +56,7 @@ div {
   grid-column: 1 / span 5;
 }
 
-.superhostImageTop {
+.l_superhostImageTop {
   color: rgb(177, 52, 73);
   grid-column: 7 / span 3;
   grid-row: 4 / span 3; 
