@@ -79,7 +79,7 @@ const App = () => {
   );
 
   return (
-    <div>
+    <div className={styles.aentirebody}>
       <LodgeHeader data={data} />
       <hr className={styles.aborder} />
       <QuickInfo data={data} />
