@@ -1,9 +1,4 @@
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    width: 597px;
-}
-
 .bi_table {
     display: flex;
     flex-direction: row;
