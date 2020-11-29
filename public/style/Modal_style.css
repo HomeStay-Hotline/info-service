@@ -82,7 +82,7 @@ div {
     font-weight: bold;
   }
 
-  table {
+  #cleanModal {
     display: inline-block;
     padding-top: 10px;
     padding-bottom: 10px;
