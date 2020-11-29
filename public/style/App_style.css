@@ -2,7 +2,7 @@
 .aentirebody {
     font-family: 'Montserrat', sans-serif;
     max-width: 597px;
-    /* align-items: center; */
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;

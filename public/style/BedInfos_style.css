@@ -1,4 +1,9 @@
 
+.bi_body {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 .bi_table {
     display: flex;
     flex-direction: row;

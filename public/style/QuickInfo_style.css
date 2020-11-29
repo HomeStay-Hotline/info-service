@@ -3,7 +3,8 @@
     width: 597px;
     padding-top: 10px;
     padding-bottom: 10px;
-    justify-content: left;
+    display: block;
+    justify-content: flex-start;
 }
 
 .qfsection {

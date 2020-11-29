@@ -7,7 +7,7 @@ const BedInfos = ({ data }) => {
   const bedroomArray = Array(data.bedroom).fill().map((e, i) => i + 1);
 
   return (
-    <div>
+    <div className={styles.bi_body}>
       <h4>Sleeping Arrangements</h4>
       <div className={styles.bi_table}>
         {bedroomArray.map((item) => (
