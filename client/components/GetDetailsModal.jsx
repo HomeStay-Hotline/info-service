@@ -22,25 +22,25 @@ const GetDetailsModal = (props) => {
   };
 
   return (
-    <div id="modalBG" className={styles.modalmain}>
-      <div className={styles.modalContent}>
+    <div id="modalBG" className={styles.m_modalmain}>
+      <div className={styles.m_modalContent}>
         <div>
           <button
             type="button"
-            className={styles.button}
+            className={styles.m_button}
             onClick={handleClick}
           >
             <FontAwesomeIcon icon="times" />
           </button>
         </div>
-        <span className={styles.heading}>
+        <span className={styles.m_heading}>
           House rules
         </span>
         <table id="rules">
           <tr>
-            <div className={styles.rulegroup}>
+            <div className={styles.m_rulegroup}>
               <div><FontAwesomeIcon icon="clock" size="1px" /></div>
-              <div className={styles.rules}>
+              <div className={styles.m_rules}>
                 Check-In:
                 {' '}
                 After
@@ -51,9 +51,9 @@ const GetDetailsModal = (props) => {
             </div>
           </tr>
           <tr>
-            <div className={styles.rulegroup}>
+            <div className={styles.m_rulegroup}>
               <div><FontAwesomeIcon icon="clock" /></div>
-              <div className={styles.rules}>
+              <div className={styles.m_rules}>
                 Check-Out:
                 {checkOut}
                 :00 AM
@@ -63,9 +63,9 @@ const GetDetailsModal = (props) => {
           { selfCheckIn
             ? (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="key" /></div>
-                  <div className={styles.rules}>Self check-in with lockbox</div>
+                  <div className={styles.m_rules}>Self check-in with lockbox</div>
                 </div>
               </tr>
             )
@@ -74,9 +74,9 @@ const GetDetailsModal = (props) => {
             ? null
             : (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="times" /></div>
-                  <div className={styles.rules}>Not suitable for (2-12years)</div>
+                  <div className={styles.m_rules}>Not suitable for (2-12years)</div>
                 </div>
                 {' '}
 
@@ -86,43 +86,43 @@ const GetDetailsModal = (props) => {
             ? null
             : (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="times" /></div>
-                  <div className={styles.rules}>Not suitable for (0-2years)</div>
+                  <div className={styles.m_rules}>Not suitable for (0-2years)</div>
                 </div>
               </tr>
             )}
           { pets
             ? (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="paw" /></div>
-                  <div className={styles.rules}>Pets are allowed</div>
+                  <div className={styles.m_rules}>Pets are allowed</div>
                 </div>
               </tr>
             )
             : (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="times" /></div>
-                  <div className={styles.rules}>No pets allowed</div>
+                  <div className={styles.m_rules}>No pets allowed</div>
                 </div>
               </tr>
             )}
           { smoking
             ? (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="smoking" /></div>
-                  <div className={styles.rules}>Smoking is allowed</div>
+                  <div className={styles.m_rules}>Smoking is allowed</div>
                 </div>
               </tr>
             )
             : (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="smoking-ban" /></div>
-                  <div className={styles.rules}>Smoking is not allowed</div>
+                  <div className={styles.m_rules}>Smoking is not allowed</div>
                 </div>
               </tr>
             )}
@@ -130,9 +130,9 @@ const GetDetailsModal = (props) => {
             ? null
             : (
               <tr>
-                <div className={styles.rulegroup}>
+                <div className={styles.m_rulegroup}>
                   <div><FontAwesomeIcon icon="bell" /></div>
-                  <div className={styles.rules}>No parties or events</div>
+                  <div className={styles.m_rules}>No parties or events</div>
                 </div>
               </tr>
             )}
@@ -141,7 +141,7 @@ const GetDetailsModal = (props) => {
           ? (
             <div>
               <h4>Additional rules</h4>
-              <p className={styles.rules}>{additionalRules}</p>
+              <p className={styles.m_rules}>{additionalRules}</p>
             </div>
           )
           : null}

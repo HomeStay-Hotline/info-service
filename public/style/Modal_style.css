@@ -4,7 +4,7 @@ div {
     font-size: 12px;
 }
 
-.modalmain {
+.m_modalmain {
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -21,7 +21,7 @@ div {
     animation-duration: 0.4s
 }
 
-.modalContent {
+.m_modalContent {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -62,23 +62,23 @@ div {
     to {opacity: 1}
 }
 
-  .cleanheader{
+  .m_cleanheader{
     padding-left: 10px;
     padding-right: 10px; 
   }
 
-  .heading {
+  .m_heading {
     font-size: 18px;
     font-weight: bold; 
     padding-top: 10px;
   }
 
-  .desc {
+  .m_desc {
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
-  .maininfo {
+  .m_maininfo {
     font-weight: bold;
   }
 
@@ -88,12 +88,12 @@ div {
     padding-bottom: 10px;
   }
 
-  .tablecolumn {
+  .m_tablecolumn {
     display: flex;
   }
 
 
-  .info {
+  .m_info {
     text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -109,14 +109,14 @@ div {
   } 
 
   
-  .rulegroup {
+  .m_rulegroup {
     display: flex;
     padding-top: 10px;
     padding-left: 5px;
     padding-bottom: 10px; 
   }
   
-  .rules {
+  .m_rules {
     display: inline-block;
     font-size: 12px;
     padding-left: 10px; 
@@ -128,7 +128,7 @@ div {
 
   /*button for both modals*/
 
-  .button {
+  .m_button {
     background-color: white; 
     border: none; 
     border-radius: 50%;
@@ -137,12 +137,12 @@ div {
     transition-duration: 0.4s;
   }
 
-  .button:hover {
+  .m_button:hover {
   background-color: rgb(218, 212, 212);
   cursor: hand; 
 }
 
-.staricon {
+.m_staricon {
   color: rgb(92, 131, 189);
   padding-top: 10px;
   padding-bottom: 10px;

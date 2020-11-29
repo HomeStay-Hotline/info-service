@@ -48,23 +48,23 @@ const Description = ({ data }) => {
 
   if (isLong && !link) {
     return (
-      <div className={styles.bodyText}>
-        <div className={styles.text}>
+      <div className={styles.d_bodyText}>
+        <div className={styles.d_text}>
           {truncateStr}
-          <button type="button" className={styles.expand} onClick={handleClick}>{link ? null : 'read more'}</button>
+          <button type="button" className={styles.d_expand} onClick={handleClick}>{link ? null : 'read more'}</button>
         </div>
-        <div className={styles.contact}>
-          <a href={url} className={styles.login}>Contact Host</a>
+        <div className={styles.d_contact}>
+          <a href={url} className={styles.d_login}>Contact Host</a>
         </div>
       </div>
     );
   }
   return (
-    <div className={styles.bodyText}>
-      <div className={styles.text}>
+    <div className={styles.d_bodyText}>
+      <div className={styles.d_text}>
         {
           data.description
-            ? <span className={styles.details}>{data.description}</span>
+            ? <span className={styles.d_details}>{data.description}</span>
             : null
         }
         {
@@ -72,9 +72,9 @@ const Description = ({ data }) => {
             ? (
               <div>
                 <p />
-                <span className={styles.header}>The space</span>
+                <span className={styles.d_header}>The space</span>
                 <br />
-                <span className={styles.details}>{data.desSpace}</span>
+                <span className={styles.d_details}>{data.desSpace}</span>
               </div>
             )
             : null
@@ -84,9 +84,9 @@ const Description = ({ data }) => {
             ? (
               <div>
                 <p />
-                <span className={styles.header}>Guest Access</span>
+                <span className={styles.d_header}>Guest Access</span>
                 <br />
-                <span className={styles.details}>{data.guestAccess}</span>
+                <span className={styles.d_details}>{data.guestAccess}</span>
               </div>
             )
             : null
@@ -96,15 +96,17 @@ const Description = ({ data }) => {
             ? (
               <div>
                 <p />
-                <span className={styles.header}>Other Things To Note</span>
+                <span className={styles.d_header}>Other Things To Note</span>
                 <p />
-                <span className={styles.details}>{data.otherThings}</span>
+                <span className={styles.d_details}>{data.otherThings}</span>
               </div>
             )
             : null
         }
       </div>
-      <div className={styles.contact}><a href={url} className={styles.login}>Contact Host</a></div>
+      <div className={styles.d_contact}>
+        <a href={url} className={styles.d_login}>Contact Host</a>
+      </div>
     </div>
   );
 };

@@ -9,6 +9,10 @@ app.use(morgan('dev'));
 
 app.use('/:id', express.static('public'));
 
+app.get('/', (req, res) => {
+  res.redirect(`localhost:${3001}/3/`);
+});
+
 app.get('/api/homes/:id/info', (req, res) => {
   db.getAllInfo(req.params.id, (err, data) => {
     if (err) {

@@ -31,7 +31,7 @@ div {
     color: rgb(95, 95, 95);
 }
 
-.button {
+.qfbutton {
     border: none; 
     background-color: transparent; 
     font-family: 'Montserrat', sans-serif;
@@ -41,7 +41,7 @@ div {
     text-decoration: underline; 
 }
 
-.button:hover {
+.qfbutton:hover {
     color: black;
     cursor: hand; 
     font-weight: bold; 

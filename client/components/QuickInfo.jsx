@@ -56,7 +56,7 @@ const QuickInfo = ({ data }) => {
                       <button
                         type="button"
                         id="clean-button"
-                        className={styles.button}
+                        className={styles.qfbutton}
                         onClick={
                           () => {
                             setShowClean(true);

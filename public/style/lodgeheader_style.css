@@ -4,10 +4,10 @@ div {
 }
 
 .l_border {
-    padding-top: 48px;
-    padding-bottom: 15px;
     width: 560px;
     height: 56px;
+    padding-top: 48px;
+    padding-bottom: 15px;
     display: flex;
 }
 

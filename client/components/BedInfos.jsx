@@ -9,16 +9,16 @@ const BedInfos = ({ data }) => {
   return (
     <div>
       <h4>Sleeping Arrangements</h4>
-      <div className={styles.table}>
+      <div className={styles.bi_table}>
         {bedroomArray.map((item) => (
-          <div className={styles.part} key={item}>
+          <div className={styles.bi_part} key={item}>
             <div><FontAwesomeIcon icon="bed" size="lg" /></div>
-            <div className={styles.bed}>
+            <div className={styles.bi_bed}>
               Bedroom
               {' '}
               {item}
             </div>
-            <div className={styles.beddesc}>1 king bed</div>
+            <div className={styles.bi_beddesc}>1 king bed</div>
           </div>
         ))}
       </div>
