@@ -1,8 +1,9 @@
 
 .qfmain {
-    max-width: 597px;
+    width: 597px;
     padding-top: 10px;
     padding-bottom: 10px;
+    justify-content: left;
 }
 
 .qfsection {
