@@ -1,11 +1,12 @@
 const fs = require('fs');
 const faker = require('faker');
 // const db = require('./index.js');
-const argv = require('yargs').argv;
 
-const lines = argv.lines || 10000000;
-const filename = argv.output || 'listings.csv';
-const lodgeFile = argv.output || 'lodgeInfo.csv';
+const lines = process.argv[2] || 10000000;
+console.log(process.argv);
+console.log(lines);
+const filename = 'listings.csv';
+const lodgeFile = 'lodgeInfo.csv';
 const writeStream = fs.createWriteStream(filename);
 const stream = fs.createWriteStream(lodgeFile);
 
@@ -15,6 +16,22 @@ const generateRandomBoolean = () => {
     return false;
   }
   return true;
+};
+
+const lodgeType = () => {
+  const options = [
+    'House',
+    'Yurt',
+    'Mansion',
+    'Apartment',
+    'Cabin',
+    'Bungalow',
+    'Cottage',
+    'Treehouse',
+    'Condominium',
+  ];
+  const choice = Math.floor(Math.random() * Math.floor(options.length));
+  return options[choice];
 };
 
 const generateParagraphLength = () => {
@@ -36,7 +53,7 @@ const generateParagraphLength = () => {
 
 const createLodgeInfo = () => {
   const entireLodge = generateRandomBoolean();
-  const type = faker.random.words(1);
+  const type = lodgeType();
   const maxGuests = faker.random.number({min:1, max:9});
   const bedroom = faker.random.number({min:1, max:9});
   const beds = faker.random.number({min:1, max:9});
@@ -45,7 +62,7 @@ const createLodgeInfo = () => {
   return `${entireLodge},${type},${maxGuests},${bedroom},${beds},${bath}\n`
 }
 
-const doWriting = (stream, encoding, done) => {
+const doWriting = (stream, encoding) => {
   let i = lines;
   function writing() {
     let canWrite = true;
@@ -53,9 +70,9 @@ const doWriting = (stream, encoding, done) => {
       i--
       let post = createLodgeInfo();
       if (i === 0) {
-        stream.write(post, encoding, done);
+        stream.write(post, encoding, stream.end.bind(stream));
       } else {
-        stream.write(post, encoding);
+        canWrite = stream.write(post, encoding);
       }
     } while (i > 0 && canWrite)
     if (i > 0 && !canWrite) {
@@ -67,15 +84,13 @@ const doWriting = (stream, encoding, done) => {
 
 stream.write('entireLodge,type,maxGuests,bedroom,beds,bath\n', 'utf-8');
 
-doWriting(stream, 'utf-8', () => {
-  stream.end()
-})
+doWriting(stream, 'utf-8')
 
-const createListings = () => {
+const createListings = (index) => {
   const hostname = faker.name.firstName();
   const hostimg = 'https://loremflickr.com/240/240/headshot';
-  const lodgename = faker.commerce.productName();
-  const lodgeInfoId = faker.random.number({min: 1, max: 100});
+  const lodgename = 'LODGENAME';
+  const lodgeInfoId = index;
   const superhost = generateRandomBoolean();
   const enhancedClean = generateRandomBoolean();
   const description = faker.lorem.sentences();
@@ -97,15 +112,17 @@ const createListings = () => {
 
 const startWriting = (writeStream, encoding, done) => {
   let i = lines;
+  let j = 0;
   function writing() {
     let canWrite = true;
     do {
       i--
-      let post = createListings();
+      j++
+      let post = createListings(j);
       if (i === 0) {
         writeStream.write(post, encoding, done);
       } else {
-        writeStream.write(post, encoding);
+        canWrite = writeStream.write(post, encoding);
       }
     } while (i > 0 && canWrite)
     if (i > 0 && !canWrite) {
