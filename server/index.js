@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-const db = require('../database');
 
 const app = express();
 const port = 3000;

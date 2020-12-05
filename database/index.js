@@ -1,24 +1,38 @@
-const mysql = require('mysql2');
+// const pg = require('pg');
+// const format = require('pg-format');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'hrsea13heo',
-  database: 'airbnbs',
-});
+// const PGUSER = 'alexyi164';
+// const PGDATABASE = 'airbnb';
 
-const getAllInfo = (id, callback) => {
-  const sql = 'SELECT * FROM listings, lodge_type, house_rules WHERE listings.lodgetype_id = lodge_type.id AND listings.houserules_id = house_rules.id AND listings.id = ?';
-  const field = [id];
-  connection.query(sql, field, (err, results) => {
-    if (err) {
-      return callback(err);
-    }
-    return callback(null, results);
-  });
-};
+// let config = {
+//   host: 'localhost',
+//   user: PGUSER,
+//   database: PGDATABASE,
+//   max: 20,
+//   idleTimeoutMillis: 30000,
+//   connectionTimeoutMillis: 3000
+// }
 
-module.exports = {
-  getAllInfo,
-  connection,
-};
+// let pool = new pg.Pool(config);
+
+// const getAllInfo = (request, response) => {
+//   let sqlString = 'SELECT * FROM listings, lodge_type, house_rules WHERE listings.lodgetype_id = lodge_type.id AND listings.houserules_id = house_rules.id AND listings.id = ?';
+//   //remember to cancel values to prevent attack. Look at the '?' and check FIELD
+//   pool.query(sqlString, (error, results) => {
+//     if (error) {
+//       console.log(error);
+//     }
+//     response.status(200).json(results);
+//   })
+// }
+
+// module.exports = { getAllInfo }
+
+// // let myClient;
+
+// // pool.connect((err, client, done) => {
+// //   if (err) {
+// //     console.log(err);
+// //   }
+// //   a
+// // })
