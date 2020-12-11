@@ -6,13 +6,13 @@ import styles from '../../public/style/lodgeheader_style.css';
 const LodgeHeader = (props) => {
   const {
     data: {
-      entireLodge, hostname, type, maxGuests, bedroom, superhost, beds, bath, hostimg,
+      entirelodge, hostname, type, maxguests, bedroom, superhost, beds, bath, hostimg,
     },
   } = props;
   const [lodgetype, changeType] = useState(true);
 
   useEffect(() => {
-    if (entireLodge) {
+    if (entirelodge) {
       changeType(false);
     }
   });
@@ -30,7 +30,7 @@ const LodgeHeader = (props) => {
         </div>
         <div className={styles.l_subheader}>
           <span>
-            {maxGuests}
+            {maxguests}
             {' '}
             guests
           </span>
@@ -66,10 +66,10 @@ const LodgeHeader = (props) => {
 
 LodgeHeader.propTypes = {
   data: PropTypes.shape({
-    entireLodge: PropTypes.number.isRequired,
+    entirelodge: PropTypes.number.isRequired,
     hostname: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    maxGuests: PropTypes.number.isRequired,
+    maxguests: PropTypes.number.isRequired,
     bedroom: PropTypes.number.isRequired,
     beds: PropTypes.number.isRequired,
     bath: PropTypes.number.isRequired,

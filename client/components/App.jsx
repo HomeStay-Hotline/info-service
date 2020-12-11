@@ -40,11 +40,12 @@ const App = () => {
   const loadData = (id) => {
     axios.get(`/api/homes/${id}/info`)
       .then((response) => {
-        setData(response.data[0]);
+        setData(response.data);
       })
       .catch((error) => {
         console.log(error, 'this is an error get');
       });
+    console.log(data)
   };
 
   useEffect(() => {

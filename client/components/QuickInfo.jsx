@@ -20,7 +20,7 @@ const QuickInfo = ({ data }) => {
     <div className={styles.qfmain}>
       <div>
         {// check if entireLodge
-          data.entireLodge
+          data.entirelodge
             ? (
               <div className={styles.qfsection}>
                 {' '}
@@ -44,7 +44,7 @@ const QuickInfo = ({ data }) => {
             : null
 }
         {// check if enhancedclean
-            data.enhancedClean
+            data.enhancedclean
               ? (
                 <div className={styles.qfsection}>
                   {' '}
@@ -73,8 +73,8 @@ const QuickInfo = ({ data }) => {
               )
               : null
 }
-        {// check if selfcheckIn
-            data.selfCheckIn
+        {// check if selfcheckin
+            data.selfcheckin
               ? (
                 <div className={styles.qfsection}>
                   {' '}
@@ -109,7 +109,7 @@ const QuickInfo = ({ data }) => {
               : null
 }
         {
-            !data.partiesEvents
+            !data.partiesevents
               ? (
                 <div className={styles.qfsection}>
                   {' '}
@@ -134,15 +134,15 @@ const QuickInfo = ({ data }) => {
                       {showDetails
                         ? (
                           <GetDetailsModal
-                            checkIn={data.checkIn}
-                            checkOut={data.checkOut}
-                            selfCheckIn={data.selfCheckIn}
-                            kidFriendly={data.kidFriendly}
-                            infantFriendly={data.infantFriendly}
+                            checkin={data.checkin}
+                            checkout={data.checkout}
+                            selfcheckin={data.selfcheckin}
+                            kidfriendly={data.kidfriendly}
+                            infantfriendly={data.infantfriendly}
                             pets={data.pets}
                             smoking={data.smoking}
-                            partiesEvents={data.partiesEvents}
-                            additionalRules={data.additionalRules}
+                            partiesevents={data.partiesevents}
+                            additionalrules={data.additionalrules}
                             closeModal={closeModal}
                           />
                         )
@@ -160,16 +160,16 @@ const QuickInfo = ({ data }) => {
 
 QuickInfo.propTypes = {
   data: PropTypes.shape({
-    checkIn: PropTypes.string.isRequired,
-    checkOut: PropTypes.string.isRequired,
-    selfCheckIn: PropTypes.number.isRequired,
-    kidFriendly: PropTypes.number.isRequired,
-    infantFriendly: PropTypes.number.isRequired,
+    checkin: PropTypes.string.isRequired,
+    checkout: PropTypes.string.isRequired,
+    selfcheckin: PropTypes.number.isRequired,
+    kidfriendly: PropTypes.number.isRequired,
+    infantfriendly: PropTypes.number.isRequired,
     pets: PropTypes.number.isRequired,
     smoking: PropTypes.number.isRequired,
-    partiesEvents: PropTypes.number.isRequired,
-    additionalRules: PropTypes.string.isRequired,
-    enhancedClean: PropTypes.number.isRequired,
+    partiesevents: PropTypes.number.isRequired,
+    additionalrules: PropTypes.string.isRequired,
+    enhancedclean: PropTypes.number.isRequired,
     superhost: PropTypes.number.isRequired,
     entireLodge: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,

@@ -1,38 +1,39 @@
-// const pg = require('pg');
-// const format = require('pg-format');
+const pg = require('pg');
+const Pool = require('pg').Pool;
 
-// const PGUSER = 'alexyi164';
-// const PGDATABASE = 'airbnb';
+const PGUSER = 'alexyi164';
+const PGDATABASE = 'airbnb';
 
-// let config = {
-//   host: 'localhost',
-//   user: PGUSER,
-//   database: PGDATABASE,
-//   max: 20,
-//   idleTimeoutMillis: 30000,
-//   connectionTimeoutMillis: 3000
-// }
+let config = {
+  host: 'localhost',
+  user: PGUSER,
+  database: PGDATABASE,
+  max: 20,
+  password: 'password'
+  // idleTimeoutMillis: 30000,
+  // connectionTimeoutMillis: 3000
+}
 
-// let pool = new pg.Pool(config);
+const pool = new Pool(config);
 
-// const getAllInfo = (request, response) => {
-//   let sqlString = 'SELECT * FROM listings, lodge_type, house_rules WHERE listings.lodgetype_id = lodge_type.id AND listings.houserules_id = house_rules.id AND listings.id = ?';
-//   //remember to cancel values to prevent attack. Look at the '?' and check FIELD
-//   pool.query(sqlString, (error, results) => {
-//     if (error) {
-//       console.log(error);
-//     }
-//     response.status(200).json(results);
-//   })
-// }
+const getAllInfo = (id, callback) => {
+  let sqlString = 'SELECT * FROM listings, lodgeInfo WHERE listings.lodgeInfoId = lodgeInfo.id AND listings.id = $1';
+  //remember to cancel values to prevent attack. Look at the '?' and check FIELD
+  pool.query(sqlString, [id], (error, results) => {
+    if (error) {
+      return callback(error);
+    }
+    return callback(error, results.rows[0]);
+  })
+}
 
-// module.exports = { getAllInfo }
+module.exports = { getAllInfo }
 
-// // let myClient;
+// let myClient;
 
-// // pool.connect((err, client, done) => {
-// //   if (err) {
-// //     console.log(err);
-// //   }
-// //   a
-// // })
+// pool.connect((err, client, done) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   a
+// })

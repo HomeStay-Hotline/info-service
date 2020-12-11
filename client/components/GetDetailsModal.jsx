@@ -5,15 +5,15 @@ import styles from '../../public/style/Modal_style.css';
 
 const GetDetailsModal = (props) => {
   const {
-    checkIn,
-    checkOut,
-    selfCheckIn,
-    kidFriendly,
-    infantFriendly,
+    checkin,
+    checkout,
+    selfcheckin,
+    kidfriendly,
+    infantfriendly,
     pets,
     smoking,
-    partiesEvents,
-    additionalRules,
+    partiesevents,
+    additionalrules,
     closeModal,
   } = props;
 
@@ -45,7 +45,7 @@ const GetDetailsModal = (props) => {
                 {' '}
                 After
                 {' '}
-                {checkIn}
+                {checkin}
                 :00 PM
               </div>
             </div>
@@ -55,12 +55,12 @@ const GetDetailsModal = (props) => {
               <div><FontAwesomeIcon icon="clock" /></div>
               <div className={styles.m_rules}>
                 Check-Out:
-                {checkOut}
+                {checkout}
                 :00 AM
               </div>
             </div>
           </tr>
-          { selfCheckIn
+          { selfcheckin
             ? (
               <tr>
                 <div className={styles.m_rulegroup}>
@@ -70,7 +70,7 @@ const GetDetailsModal = (props) => {
               </tr>
             )
             : null}
-          { kidFriendly
+          { kidfriendly
             ? null
             : (
               <tr>
@@ -82,7 +82,7 @@ const GetDetailsModal = (props) => {
 
               </tr>
             )}
-          { infantFriendly
+          { infantfriendly
             ? null
             : (
               <tr>
@@ -126,7 +126,7 @@ const GetDetailsModal = (props) => {
                 </div>
               </tr>
             )}
-          { partiesEvents
+          { partiesevents
             ? null
             : (
               <tr>
@@ -137,11 +137,11 @@ const GetDetailsModal = (props) => {
               </tr>
             )}
         </table>
-        { (additionalRules.length > 0)
+        { (additionalrules.length > 0)
           ? (
             <div>
               <h4>Additional rules</h4>
-              <p className={styles.m_rules}>{additionalRules}</p>
+              <p className={styles.m_rules}>{additionalrules}</p>
             </div>
           )
           : null}
@@ -151,15 +151,15 @@ const GetDetailsModal = (props) => {
 };
 
 GetDetailsModal.propTypes = {
-  checkIn: PropTypes.number.isRequired,
-  checkOut: PropTypes.number.isRequired,
-  selfCheckIn: PropTypes.bool.isRequired,
-  kidFriendly: PropTypes.bool.isRequired,
-  infantFriendly: PropTypes.bool.isRequired,
+  checkin: PropTypes.number.isRequired,
+  checkout: PropTypes.number.isRequired,
+  selfcheckin: PropTypes.bool.isRequired,
+  kidfriendly: PropTypes.bool.isRequired,
+  infantfriendly: PropTypes.bool.isRequired,
   pets: PropTypes.bool.isRequired,
   smoking: PropTypes.bool.isRequired,
-  partiesEvents: PropTypes.bool.isRequired,
-  additionalRules: PropTypes.string.isRequired,
+  partiesevents: PropTypes.bool.isRequired,
+  additionalrules: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 
