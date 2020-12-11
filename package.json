@@ -36,6 +36,7 @@
     "jest-extended": "^0.11.5",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
+    "newrelic": "^7.0.2",
     "pg": "^8.5.1",
     "postgres": "^1.0.2",
     "prop-types": "^15.7.2",
