@@ -7,7 +7,7 @@ const Description = ({ data }) => {
   const [isLong, changeIsLong] = useState(false);
   const [truncateStr, changeTruncateStr] = useState('');
 
-  let descriptionLength = [data.description, data.desSpace, data.guestAccess, data.otherThings];
+  let descriptionLength = [data.description, data.desspace, data.guestaccess, data.otherthings];
 
   const url = 'http://www.airbnb.com';
 
@@ -27,14 +27,14 @@ const Description = ({ data }) => {
     if (data.description) {
       groupedInfo.push(data.description);
     }
-    if (data.desSpace) {
-      groupedInfo.push('The Space', data.desSpace);
+    if (data.desspace) {
+      groupedInfo.push('The Space', data.desspace);
     }
-    if (data.guestAccess) {
-      groupedInfo.push('Guest Access', data.guestAccess);
+    if (data.guestaccess) {
+      groupedInfo.push('Guest Access', data.guestaccess);
     }
-    if (data.otherThings) {
-      groupedInfo.push('Other Things To Note', data.otherThings);
+    if (data.otherthings) {
+      groupedInfo.push('Other Things To Note', data.otherthings);
     }
     const newInfo = groupedInfo.join('\n');
     const truncatedString = newInfo.slice(0, 250);
@@ -68,37 +68,37 @@ const Description = ({ data }) => {
             : null
         }
         {
-          data.desSpace
+          data.desspace
             ? (
               <div>
                 <p />
                 <span className={styles.d_header}>The space</span>
                 <br />
-                <span className={styles.d_details}>{data.desSpace}</span>
+                <span className={styles.d_details}>{data.desspace}</span>
               </div>
             )
             : null
         }
         {
-          data.guestAccess
+          data.guestaccess
             ? (
               <div>
                 <p />
                 <span className={styles.d_header}>Guest Access</span>
                 <br />
-                <span className={styles.d_details}>{data.guestAccess}</span>
+                <span className={styles.d_details}>{data.guestaccess}</span>
               </div>
             )
             : null
         }
         {
-          data.otherThings
+          data.otherthings
             ? (
               <div>
                 <p />
                 <span className={styles.d_header}>Other Things To Note</span>
                 <p />
-                <span className={styles.d_details}>{data.otherThings}</span>
+                <span className={styles.d_details}>{data.otherthings}</span>
               </div>
             )
             : null
@@ -114,9 +114,9 @@ const Description = ({ data }) => {
 Description.propTypes = {
   data: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    desSpace: PropTypes.string.isRequired,
-    guestAccess: PropTypes.string.isRequired,
-    otherThings: PropTypes.string.isRequired,
+    desspace: PropTypes.string.isRequired,
+    guestaccess: PropTypes.string.isRequired,
+    otherthings: PropTypes.string.isRequired,
   }).isRequired,
 };
 
