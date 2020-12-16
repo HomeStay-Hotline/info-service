@@ -1,1 +1,0 @@
-ssh -i '/Users/annie/Desktop/hackreactor/info-service/despairBNB.pem' ubuntu@ec2-34-220-254-51.us-west-2.compute.amazonaws.com

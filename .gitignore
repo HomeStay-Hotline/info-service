@@ -1,11 +1,10 @@
 node_modules
 coverage
-despairBNB.pem
 *.pem
-*.sh
 /public/bundle.js
 /public/bundle.js.LICENSE.txt
 *.csv
 *.key
 *.jsonl
-
+*.sh
+login.sh

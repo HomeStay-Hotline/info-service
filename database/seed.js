@@ -5,8 +5,8 @@ const faker = require('faker');
 const lines = process.argv[2] || 10000000;
 console.log(process.argv);
 console.log(lines);
-const filename = 'listings.csv';
-const lodgeFile = 'lodgeInfo.csv';
+const filename = '/../../../media/alexyi164/UUI/SDC/listings.csv';
+const lodgeFile = '/../../../media/alexyi164/UUI/SDC/lodgeInfo.csv';
 const writeStream = fs.createWriteStream(filename);
 const stream = fs.createWriteStream(lodgeFile);
 

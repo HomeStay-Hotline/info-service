@@ -43,7 +43,7 @@ const App = () => {
         setData(response.data);
       })
       .catch((error) => {
-        console.log(error, 'this is an error get');
+        console.log(error);
       });
     console.log(data)
   };
