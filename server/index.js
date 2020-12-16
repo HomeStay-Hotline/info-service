@@ -1,11 +1,11 @@
+// require('newrelic');
 const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
+// const morgan = require('morgan');
 const db = require('../database/index.js')
 const app = express();
-const port = 3000;
+const port = 3001;
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use('/:id', express.static('public'));
 
@@ -19,7 +19,6 @@ app.get('/api/homes/:id/info', (req, res) => {
       console.log(err);
       res.end();
     }
-    console.log(req.params.id, 'it is running');
     res.send(data);
   });
 });

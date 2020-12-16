@@ -28,4 +28,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  externals: /k6(\/.*)?/,
 };
