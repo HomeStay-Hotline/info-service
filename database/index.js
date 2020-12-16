@@ -5,7 +5,8 @@ const PGUSER = 'alexyi164';
 const PGDATABASE = 'airbnb';
 
 let config = {
-  host: 'localhost',
+  host: '34.203.208.189',
+  port: '5432',
   user: PGUSER,
   database: PGDATABASE,
   max: 20,
