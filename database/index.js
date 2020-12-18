@@ -10,7 +10,7 @@ let config = {
   user: PGUSER,
   database: PGDATABASE,
   max: 20,
-  password: 'password'
+  password: process.env.DBPASSWORD
 }
 
 const pool = new Pool(config);

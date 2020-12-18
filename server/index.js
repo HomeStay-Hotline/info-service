@@ -7,6 +7,12 @@ const port = 3001;
 
 // app.use(morgan('dev'));
 
+app.use('/', express.static('public'));
+
+app.get('/loaderio-e2fdfb4ed88d9cb7ff2c1e3c9267fc7b.txt', (req, res) => {
+  res.send('/loaderio-e2fdfb4ed88d9cb7ff2c1e3c9267fc7b');
+});
+
 app.use('/:id', express.static('public'));
 
 app.get('/', (req, res) => {
